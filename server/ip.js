@@ -3,6 +3,8 @@
 // os.networkInterfaces() can be restricted on some Android builds.
 import os from 'node:os';
 import { execFileSync } from 'node:child_process';
+import { resolve } from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 /** @param {string} a */
 export function isPrivateIPv4(a) {
@@ -54,4 +56,4 @@ export function isLoopback(addr) {
   return a === '::1' || /^127\./.test(a);
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) console.log(lanIps().join('\n'));
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) console.log(lanIps().join('\n'));

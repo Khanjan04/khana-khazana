@@ -13,5 +13,5 @@
     "types": ["node"]
   },
   "include": ["server/**/*.js", "web/**/*.js", "scripts/**/*.js", "test/**/*.js"],
-  "exclude": ["node_modules", "data", "web/sw.js"]
+  "exclude": ["node_modules", "data", "web/sw.js", "test/e2e"]
 }

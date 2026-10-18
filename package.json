@@ -18,7 +18,7 @@
     "make-golden": "node --disable-warning=ExperimentalWarning scripts/make-golden.js",
     "soak": "node --disable-warning=ExperimentalWarning scripts/soak.js",
     "ip": "node server/ip.js",
-    "prepare": "git config core.hooksPath .githooks 2>/dev/null || true",
+    "prepare": "node scripts/setup-hooks.js",
     "test:e2e": "node --disable-warning=ExperimentalWarning test/e2e/three-phones.e2e.js",
     "release": "bash scripts/release.sh"
   },
