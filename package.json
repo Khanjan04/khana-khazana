@@ -1,0 +1,33 @@
+{
+  "name": "khanakhajana-pos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline, phone-hosted restaurant POS for India (host-authoritative web app; Node + node:sqlite in Termux).",
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "dev": "node --disable-warning=ExperimentalWarning server/server.js",
+    "start": "node --disable-warning=ExperimentalWarning server/server.js",
+    "test": "node --disable-warning=ExperimentalWarning --test --test-concurrency=1 \"test/*.test.js\"",
+    "test:golden": "node --disable-warning=ExperimentalWarning --test test/totals.golden.test.js",
+    "typecheck": "tsc --noEmit -p jsconfig.json",
+    "import:v13": "node --disable-warning=ExperimentalWarning server/import/v13.js",
+    "make-golden": "node --disable-warning=ExperimentalWarning scripts/make-golden.js",
+    "soak": "node --disable-warning=ExperimentalWarning scripts/soak.js",
+    "ip": "node server/ip.js",
+    "prepare": "git config core.hooksPath .githooks 2>/dev/null || true",
+    "test:e2e": "node --disable-warning=ExperimentalWarning test/e2e/three-phones.e2e.js",
+    "release": "bash scripts/release.sh"
+  },
+  "dependencies": {
+    "ws": "8.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.30",
+    "@types/ws": "8.18.1",
+    "typescript": "5.8.3"
+  }
+}

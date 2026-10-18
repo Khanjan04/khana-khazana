@@ -1,0 +1,5852 @@
+{
+ "app": "khanakhajana",
+ "version": 13,
+ "_sample": "SYNTHETIC — replace with a real v13 backup on Day 1",
+ "settings": {
+  "name": "Khana Khajana",
+  "address": "Main Road, Indore",
+  "phone": "9800000000",
+  "gstin": "23ABCDE1234F1Z5",
+  "fssai": "11223344556677",
+  "cgst": 2.5,
+  "sgst": 2.5,
+  "serviceChargePct": 5,
+  "compositionScheme": false,
+  "specifiedPremises": false,
+  "paper": 80,
+  "footer": "Thank you! Visit again."
+ },
+ "counters": {
+  "kot": 42,
+  "kotDate": "2026-10-17",
+  "bill": 1290,
+  "order": 30
+ },
+ "groups": [
+  {
+   "id": 1,
+   "name": "Starters",
+   "subgroups": [
+    {
+     "id": 11,
+     "name": "Veg"
+    },
+    {
+     "id": 12,
+     "name": "Non-veg"
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Main course",
+   "subgroups": [
+    {
+     "id": 21,
+     "name": "Curries"
+    },
+    {
+     "id": 22,
+     "name": "Rice"
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "name": "Breads",
+   "subgroups": []
+  },
+  {
+   "id": 4,
+   "name": "Beverages",
+   "subgroups": []
+  }
+ ],
+ "items": [
+  {
+   "id": 101,
+   "name": "Paneer Tikka",
+   "code": "1",
+   "price": 249,
+   "groupId": 1,
+   "subgroupId": 11,
+   "diet": "veg",
+   "fav": true,
+   "variants": [
+    {
+     "name": "Half",
+     "price": 149
+    },
+    {
+     "name": "Full",
+     "price": 249
+    }
+   ],
+   "extras": [
+    {
+     "name": "Extra cheese",
+     "price": 40
+    }
+   ]
+  },
+  {
+   "id": 102,
+   "name": "Chicken 65",
+   "code": "2",
+   "price": 279.5,
+   "groupId": 1,
+   "subgroupId": 12,
+   "diet": "nonveg",
+   "fav": true,
+   "variants": [],
+   "extras": []
+  },
+  {
+   "id": 103,
+   "name": "Egg Bhurji",
+   "code": "3",
+   "price": 129,
+   "groupId": 1,
+   "subgroupId": 12,
+   "diet": "egg",
+   "variants": [],
+   "extras": [
+    {
+     "name": "Butter",
+     "price": 15.5
+    }
+   ]
+  },
+  {
+   "id": 201,
+   "name": "Dal Makhani",
+   "code": "10",
+   "price": 219,
+   "groupId": 2,
+   "subgroupId": 21,
+   "diet": "veg",
+   "fav": true,
+   "variants": [],
+   "extras": []
+  },
+  {
+   "id": 202,
+   "name": "Butter Chicken",
+   "code": "11",
+   "price": 329,
+   "groupId": 2,
+   "subgroupId": 21,
+   "diet": "nonveg",
+   "variants": [],
+   "extras": []
+  },
+  {
+   "id": 203,
+   "name": "Veg Biryani",
+   "code": "12",
+   "price": 199.99,
+   "groupId": 2,
+   "subgroupId": 22,
+   "diet": "veg",
+   "variants": [],
+   "extras": [
+    {
+     "name": "Raita",
+     "price": 35
+    }
+   ]
+  },
+  {
+   "id": 301,
+   "name": "Butter Naan",
+   "code": "20",
+   "price": 45,
+   "groupId": 3,
+   "diet": "veg",
+   "variants": [],
+   "extras": []
+  },
+  {
+   "id": 302,
+   "name": "Tandoori Roti",
+   "code": "21",
+   "price": 22.5,
+   "groupId": 3,
+   "diet": "veg",
+   "variants": [],
+   "extras": []
+  },
+  {
+   "id": 401,
+   "name": "Masala Chaas",
+   "code": "30",
+   "price": 39,
+   "groupId": 4,
+   "diet": "veg",
+   "station": "bar",
+   "variants": [],
+   "extras": []
+  },
+  {
+   "id": 402,
+   "name": "Fresh Lime Soda",
+   "code": "31",
+   "price": 69,
+   "groupId": 4,
+   "diet": "veg",
+   "station": "bar",
+   "variants": [],
+   "extras": []
+  }
+ ],
+ "sections": [
+  {
+   "id": 1,
+   "name": "AC Hall",
+   "tables": [
+    {
+     "id": 100,
+     "name": "1",
+     "seats": 4
+    },
+    {
+     "id": 101,
+     "name": "2",
+     "seats": 4
+    },
+    {
+     "id": 102,
+     "name": "3",
+     "seats": 4
+    },
+    {
+     "id": 103,
+     "name": "4",
+     "seats": 4
+    },
+    {
+     "id": 104,
+     "name": "5",
+     "seats": 4
+    },
+    {
+     "id": 105,
+     "name": "6",
+     "seats": 4
+    },
+    {
+     "id": 106,
+     "name": "7",
+     "seats": 4
+    },
+    {
+     "id": 107,
+     "name": "8",
+     "seats": 4
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Garden",
+   "tables": [
+    {
+     "id": 200,
+     "name": "G1",
+     "seats": 6
+    },
+    {
+     "id": 201,
+     "name": "G2",
+     "seats": 6
+    },
+    {
+     "id": 202,
+     "name": "G3",
+     "seats": 6
+    },
+    {
+     "id": 203,
+     "name": "G4",
+     "seats": 6
+    }
+   ]
+  }
+ ],
+ "users": [
+  {
+   "id": 1,
+   "name": "Papa",
+   "role": "owner",
+   "pin": "1234"
+  },
+  {
+   "id": 2,
+   "name": "Ravi",
+   "role": "manager",
+   "pin": "2345"
+  },
+  {
+   "id": 3,
+   "name": "Sunita",
+   "role": "biller",
+   "pin": "3456"
+  },
+  {
+   "id": 4,
+   "name": "Amit",
+   "role": "captain",
+   "pin": "4567"
+  },
+  {
+   "id": 5,
+   "name": "Kitchen",
+   "role": "kitchen",
+   "pin": "5678"
+  }
+ ],
+ "notes": [
+  "Less spicy",
+  "No onion",
+  "Jain",
+  "Extra hot",
+  "Pack separately"
+ ],
+ "orders": [
+  {
+   "id": 5000,
+   "no": 1,
+   "date": "2026-10-15",
+   "time": 1792049400000,
+   "type": "dine",
+   "tableId": 102,
+   "persons": 2,
+   "lines": [
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 149,
+     "qty": 1,
+     "variant": "Half",
+     "extras": [
+      {
+       "name": "Extra cheese",
+       "price": 40
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 1
+    },
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 249,
+     "qty": 2,
+     "variant": "Full",
+     "extras": [
+      {
+       "name": "Extra cheese",
+       "price": 40
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 1
+    },
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 3,
+     "variant": "",
+     "extras": [
+      {
+       "name": "Butter",
+       "price": 15.5
+      }
+     ],
+     "note": "",
+     "void": true,
+     "voidReason": "customer changed mind",
+     "kot": 1
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 2,
+     "variant": "",
+     "extras": [
+      {
+       "name": "Raita",
+       "price": 35
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 1
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 1
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1201",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 1371
+    }
+   ]
+  },
+  {
+   "id": 5001,
+   "no": 2,
+   "date": "2026-10-15",
+   "time": 1792050000000,
+   "type": "dine",
+   "tableId": 103,
+   "persons": 1,
+   "lines": [
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 149,
+     "qty": 3,
+     "variant": "Half",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 2
+    },
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 2
+    },
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 2
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 2
+    },
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 2
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1202",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 802
+    }
+   ]
+  },
+  {
+   "id": 5002,
+   "no": 3,
+   "date": "2026-10-15",
+   "time": 1792050600000,
+   "type": "dine",
+   "tableId": 106,
+   "persons": 2,
+   "lines": [
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 3
+    },
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 249,
+     "qty": 2,
+     "variant": "Full",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 3
+    },
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 3
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1203",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 318
+    },
+    {
+     "mode": "upi",
+     "amount": 318
+    }
+   ]
+  },
+  {
+   "id": 5003,
+   "no": 4,
+   "date": "2026-10-15",
+   "time": 1792051200000,
+   "type": "delivery",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 4
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1204",
+   "status": "settled",
+   "platform": "Phone",
+   "customer": {
+    "name": "Cust 3",
+    "phone": "9810023757"
+   },
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 293
+    },
+    {
+     "mode": "upi",
+     "amount": 294
+    }
+   ]
+  },
+  {
+   "id": 5004,
+   "no": 5,
+   "date": "2026-10-15",
+   "time": 1792051800000,
+   "type": "dine",
+   "tableId": 203,
+   "persons": 2,
+   "lines": [
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 6
+    },
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 6
+    },
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 6
+    },
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 249,
+     "qty": 2,
+     "variant": "Full",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 6
+    },
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 6
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1205",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 558
+    },
+    {
+     "mode": "upi",
+     "amount": 558
+    }
+   ]
+  },
+  {
+   "id": 5005,
+   "no": 6,
+   "date": "2026-10-15",
+   "time": 1792052400000,
+   "type": "dine",
+   "tableId": 103,
+   "persons": 2,
+   "lines": [
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 7
+    },
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 7
+    },
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 7
+    },
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 7
+    },
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 7
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1206",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 1883
+    }
+   ]
+  },
+  {
+   "id": 5006,
+   "no": 7,
+   "date": "2026-10-15",
+   "time": 1792053000000,
+   "type": "dine",
+   "tableId": 103,
+   "persons": 4,
+   "lines": [
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 8
+    }
+   ],
+   "discount": {
+    "type": "pct",
+    "value": 5,
+    "reason": "regular"
+   },
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1207",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 99
+    },
+    {
+     "mode": "upi",
+     "amount": 100
+    }
+   ]
+  },
+  {
+   "id": 5007,
+   "no": 8,
+   "date": "2026-10-15",
+   "time": 1792053600000,
+   "type": "delivery",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 9
+    },
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 9
+    },
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 149,
+     "qty": 2,
+     "variant": "Half",
+     "extras": [
+      {
+       "name": "Extra cheese",
+       "price": 40
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 9
+    },
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 9
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1208",
+   "status": "settled",
+   "platform": "Swiggy",
+   "customer": {
+    "name": "Cust 7",
+    "phone": "9810055433"
+   },
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 398
+    },
+    {
+     "mode": "upi",
+     "amount": 398
+    }
+   ]
+  },
+  {
+   "id": 5008,
+   "no": 9,
+   "date": "2026-10-15",
+   "time": 1792054200000,
+   "type": "dine",
+   "tableId": 200,
+   "persons": 4,
+   "lines": [
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 10
+    },
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 249,
+     "qty": 2,
+     "variant": "Full",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 10
+    },
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 10
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1209",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 1328
+    }
+   ]
+  },
+  {
+   "id": 5009,
+   "no": 10,
+   "date": "2026-10-15",
+   "time": 1792054800000,
+   "type": "dine",
+   "tableId": 107,
+   "persons": 5,
+   "lines": [
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 11
+    },
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": true,
+     "voidReason": "customer changed mind",
+     "kot": 11
+    },
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 12
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 2,
+     "variant": "",
+     "extras": [
+      {
+       "name": "Raita",
+       "price": 35
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 12
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1210",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 1194
+    }
+   ]
+  },
+  {
+   "id": 5010,
+   "no": 11,
+   "date": "2026-10-15",
+   "time": 1792055400000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 13
+    },
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 149,
+     "qty": 3,
+     "variant": "Half",
+     "extras": [
+      {
+       "name": "Extra cheese",
+       "price": 40
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 13
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 13
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 14
+    },
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 14
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1211",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 1669
+    }
+   ]
+  },
+  {
+   "id": 5011,
+   "no": 12,
+   "date": "2026-10-15",
+   "time": 1792056000000,
+   "type": "dine",
+   "tableId": 100,
+   "persons": 4,
+   "lines": [
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 15
+    },
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 149,
+     "qty": 2,
+     "variant": "Half",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 15
+    },
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 15
+    },
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 15
+    },
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 15
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": true,
+   "billNo": "1212",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 1959
+    }
+   ]
+  },
+  {
+   "id": 5012,
+   "no": 13,
+   "date": "2026-10-15",
+   "time": 1792056600000,
+   "type": "dine",
+   "tableId": 103,
+   "persons": 5,
+   "lines": [
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 16
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 16
+    }
+   ],
+   "discount": {
+    "type": "pct",
+    "value": 15,
+    "reason": "regular"
+   },
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1213",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 927
+    }
+   ]
+  },
+  {
+   "id": 5013,
+   "no": 14,
+   "date": "2026-10-15",
+   "time": 1792057200000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 17
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 18
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1214",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 677
+    }
+   ]
+  },
+  {
+   "id": 5014,
+   "no": 15,
+   "date": "2026-10-15",
+   "time": 1792057800000,
+   "type": "dine",
+   "tableId": 106,
+   "persons": 4,
+   "lines": [
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 19
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 19
+    },
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 20
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1215",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 956
+    }
+   ]
+  },
+  {
+   "id": 5015,
+   "no": 16,
+   "date": "2026-10-15",
+   "time": 1792058400000,
+   "type": "dine",
+   "tableId": 107,
+   "persons": 3,
+   "lines": [
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 21
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 21
+    },
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 2,
+     "variant": "",
+     "extras": [
+      {
+       "name": "Butter",
+       "price": 15.5
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 21
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": true,
+   "billNo": "1216",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 234
+    },
+    {
+     "mode": "upi",
+     "amount": 234
+    }
+   ]
+  },
+  {
+   "id": 5016,
+   "no": 17,
+   "date": "2026-10-15",
+   "time": 1792059000000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 22
+    }
+   ],
+   "discount": {
+    "type": "pct",
+    "value": 10,
+    "reason": "regular"
+   },
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1217",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 189
+    }
+   ]
+  },
+  {
+   "id": 5017,
+   "no": 18,
+   "date": "2026-10-15",
+   "time": 1792059600000,
+   "type": "dine",
+   "tableId": 104,
+   "persons": 2,
+   "lines": [
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 23
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 23
+    },
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 2,
+     "variant": "",
+     "extras": [
+      {
+       "name": "Butter",
+       "price": 15.5
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 23
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1218",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 792
+    }
+   ]
+  },
+  {
+   "id": 5018,
+   "no": 19,
+   "date": "2026-10-15",
+   "time": 1792060200000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 24
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1219",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 47
+    }
+   ]
+  },
+  {
+   "id": 5019,
+   "no": 20,
+   "date": "2026-10-15",
+   "time": 1792060800000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 26
+    },
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 26
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1220",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 208
+    },
+    {
+     "mode": "upi",
+     "amount": 208
+    }
+   ]
+  },
+  {
+   "id": 5020,
+   "no": 21,
+   "date": "2026-10-15",
+   "time": 1792061400000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 27
+    },
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 27
+    },
+    {
+     "itemId": null,
+     "name": "Open item",
+     "price": 57.75,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 27
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1221",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 1368
+    }
+   ]
+  },
+  {
+   "id": 5021,
+   "no": 22,
+   "date": "2026-10-15",
+   "time": 1792062000000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 28
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 1,
+     "variant": "",
+     "extras": [
+      {
+       "name": "Raita",
+       "price": 35
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 28
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1222",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 877
+    }
+   ]
+  },
+  {
+   "id": 5022,
+   "no": 23,
+   "date": "2026-10-15",
+   "time": 1792062600000,
+   "type": "dine",
+   "tableId": 105,
+   "persons": 1,
+   "lines": [
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 29
+    }
+   ],
+   "discount": null,
+   "complimentary": true,
+   "serviceCharge": false,
+   "billNo": "1223",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 0
+    }
+   ]
+  },
+  {
+   "id": 5023,
+   "no": 24,
+   "date": "2026-10-15",
+   "time": 1792063200000,
+   "type": "delivery",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 149,
+     "qty": 3,
+     "variant": "Half",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 30
+    },
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 30
+    },
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 30
+    },
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 30
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1224",
+   "status": "settled",
+   "platform": "Phone",
+   "customer": {
+    "name": "Cust 23",
+    "phone": "9810182137"
+   },
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 334
+    },
+    {
+     "mode": "upi",
+     "amount": 335
+    }
+   ]
+  },
+  {
+   "id": 5024,
+   "no": 25,
+   "date": "2026-10-15",
+   "time": 1792063800000,
+   "type": "dine",
+   "tableId": 106,
+   "persons": 5,
+   "lines": [
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 31
+    },
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 149,
+     "qty": 3,
+     "variant": "Half",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 31
+    },
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 31
+    },
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 31
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1225",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 1153
+    }
+   ]
+  },
+  {
+   "id": 5025,
+   "no": 26,
+   "date": "2026-10-15",
+   "time": 1792064400000,
+   "type": "delivery",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 32
+    },
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": true,
+     "voidReason": "customer changed mind",
+     "kot": 32
+    },
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": true,
+     "voidReason": "customer changed mind",
+     "kot": 32
+    }
+   ],
+   "discount": {
+    "type": "fixed",
+    "value": 100,
+    "reason": "promo"
+   },
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1226",
+   "status": "settled",
+   "platform": "Zomato",
+   "customer": {
+    "name": "Cust 25",
+    "phone": "9810197975"
+   },
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 188
+    }
+   ]
+  },
+  {
+   "id": 5026,
+   "no": 27,
+   "date": "2026-10-15",
+   "time": 1792065000000,
+   "type": "delivery",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 33
+    },
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 33
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1227",
+   "status": "settled",
+   "platform": "Phone",
+   "customer": {
+    "name": "Cust 26",
+    "phone": "9810205894"
+   },
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 785
+    }
+   ]
+  },
+  {
+   "id": 5027,
+   "no": 28,
+   "date": "2026-10-15",
+   "time": 1792065600000,
+   "type": "dine",
+   "tableId": 203,
+   "persons": 2,
+   "lines": [
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 34
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 34
+    },
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 34
+    }
+   ],
+   "discount": {
+    "type": "pct",
+    "value": 12.5,
+    "reason": "regular"
+   },
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1228",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 1105
+    }
+   ]
+  },
+  {
+   "id": 5028,
+   "no": 29,
+   "date": "2026-10-15",
+   "time": 1792066200000,
+   "type": "dine",
+   "tableId": 106,
+   "persons": 1,
+   "lines": [
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 35
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1229",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 145
+    }
+   ]
+  },
+  {
+   "id": 5029,
+   "no": 30,
+   "date": "2026-10-15",
+   "time": 1792066800000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 36
+    },
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 36
+    },
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 36
+    },
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 37
+    },
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 37
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": true,
+   "billNo": "1230",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 1181
+    },
+    {
+     "mode": "upi",
+     "amount": 1182
+    }
+   ]
+  },
+  {
+   "id": 5030,
+   "no": 1,
+   "date": "2026-10-16",
+   "time": 1792153800000,
+   "type": "dine",
+   "tableId": 200,
+   "persons": 1,
+   "lines": [
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 1
+    }
+   ],
+   "discount": {
+    "type": "pct",
+    "value": 5,
+    "reason": "regular"
+   },
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1231",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 836
+    }
+   ]
+  },
+  {
+   "id": 5031,
+   "no": 2,
+   "date": "2026-10-16",
+   "time": 1792154400000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 2
+    }
+   ],
+   "discount": {
+    "type": "fixed",
+    "value": 100,
+    "reason": "promo"
+   },
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1232",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 0
+    }
+   ]
+  },
+  {
+   "id": 5032,
+   "no": 3,
+   "date": "2026-10-16",
+   "time": 1792155000000,
+   "type": "dine",
+   "tableId": 107,
+   "persons": 1,
+   "lines": [
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 3
+    },
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": true,
+     "voidReason": "customer changed mind",
+     "kot": 3
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1233",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 345
+    }
+   ]
+  },
+  {
+   "id": 5033,
+   "no": 4,
+   "date": "2026-10-16",
+   "time": 1792155600000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 4
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 3,
+     "variant": "",
+     "extras": [
+      {
+       "name": "Raita",
+       "price": 35
+      }
+     ],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 4
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1234",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 543
+    },
+    {
+     "mode": "upi",
+     "amount": 543
+    }
+   ]
+  },
+  {
+   "id": 5034,
+   "no": 5,
+   "date": "2026-10-16",
+   "time": 1792156200000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 5
+    },
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 5
+    },
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 5
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": true,
+     "voidReason": "customer changed mind",
+     "kot": 5
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1235",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 217
+    }
+   ]
+  },
+  {
+   "id": 5035,
+   "no": 6,
+   "date": "2026-10-16",
+   "time": 1792156800000,
+   "type": "dine",
+   "tableId": 105,
+   "persons": 1,
+   "lines": [
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 6
+    },
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 149,
+     "qty": 2,
+     "variant": "Half",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 6
+    },
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 7
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1236",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 2230
+    }
+   ]
+  },
+  {
+   "id": 5036,
+   "no": 7,
+   "date": "2026-10-16",
+   "time": 1792157400000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 8
+    },
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 3,
+     "variant": "",
+     "extras": [
+      {
+       "name": "Butter",
+       "price": 15.5
+      }
+     ],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 8
+    },
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 9
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1237",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 1375
+    }
+   ]
+  },
+  {
+   "id": 5037,
+   "no": 8,
+   "date": "2026-10-16",
+   "time": 1792158000000,
+   "type": "dine",
+   "tableId": 201,
+   "persons": 2,
+   "lines": [
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 10
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 10
+    },
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 149,
+     "qty": 2,
+     "variant": "Half",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 11
+    },
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 1,
+     "variant": "",
+     "extras": [
+      {
+       "name": "Butter",
+       "price": 15.5
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 11
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1238",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 1239
+    }
+   ]
+  },
+  {
+   "id": 5038,
+   "no": 9,
+   "date": "2026-10-16",
+   "time": 1792158600000,
+   "type": "dine",
+   "tableId": 203,
+   "persons": 1,
+   "lines": [
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 12
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 12
+    },
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 12
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1239",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 1046
+    }
+   ]
+  },
+  {
+   "id": 5039,
+   "no": 10,
+   "date": "2026-10-16",
+   "time": 1792159200000,
+   "type": "dine",
+   "tableId": 201,
+   "persons": 4,
+   "lines": [
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 13
+    },
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 13
+    },
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 13
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": true,
+   "billNo": "1240",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 849
+    }
+   ]
+  },
+  {
+   "id": 5040,
+   "no": 11,
+   "date": "2026-10-16",
+   "time": 1792159800000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 149,
+     "qty": 2,
+     "variant": "Half",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 14
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": true,
+   "billNo": "1241",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 164
+    },
+    {
+     "mode": "upi",
+     "amount": 164
+    }
+   ]
+  },
+  {
+   "id": 5041,
+   "no": 12,
+   "date": "2026-10-16",
+   "time": 1792160400000,
+   "type": "dine",
+   "tableId": 103,
+   "persons": 2,
+   "lines": [
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 2,
+     "variant": "",
+     "extras": [
+      {
+       "name": "Raita",
+       "price": 35
+      }
+     ],
+     "note": "",
+     "void": true,
+     "voidReason": "customer changed mind",
+     "kot": 16
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 16
+    },
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 16
+    },
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 249,
+     "qty": 1,
+     "variant": "Full",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 16
+    },
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 16
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": true,
+   "billNo": "1242",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 599
+    }
+   ]
+  },
+  {
+   "id": 5042,
+   "no": 13,
+   "date": "2026-10-16",
+   "time": 1792161000000,
+   "type": "dine",
+   "tableId": 104,
+   "persons": 1,
+   "lines": [
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 17
+    },
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 249,
+     "qty": 1,
+     "variant": "Full",
+     "extras": [
+      {
+       "name": "Extra cheese",
+       "price": 40
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 17
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 17
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": true,
+   "billNo": "1243",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 259
+    },
+    {
+     "mode": "upi",
+     "amount": 260
+    }
+   ]
+  },
+  {
+   "id": 5043,
+   "no": 14,
+   "date": "2026-10-16",
+   "time": 1792161600000,
+   "type": "dine",
+   "tableId": 201,
+   "persons": 2,
+   "lines": [
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 18
+    },
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 18
+    },
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 18
+    },
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 19
+    },
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 19
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1244",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 1546
+    }
+   ]
+  },
+  {
+   "id": 5044,
+   "no": 15,
+   "date": "2026-10-16",
+   "time": 1792162200000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 20
+    },
+    {
+     "itemId": null,
+     "name": "Open item",
+     "price": 57.75,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 20
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1245",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 278
+    }
+   ]
+  },
+  {
+   "id": 5045,
+   "no": 16,
+   "date": "2026-10-16",
+   "time": 1792162800000,
+   "type": "delivery",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 21
+    },
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": true,
+     "voidReason": "customer changed mind",
+     "kot": 21
+    },
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 21
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": true,
+     "voidReason": "customer changed mind",
+     "kot": 21
+    },
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 21
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1246",
+   "status": "settled",
+   "platform": "Zomato",
+   "customer": {
+    "name": "Cust 45",
+    "phone": "9810356355"
+   },
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 321
+    },
+    {
+     "mode": "upi",
+     "amount": 322
+    }
+   ]
+  },
+  {
+   "id": 5046,
+   "no": 17,
+   "date": "2026-10-16",
+   "time": 1792163400000,
+   "type": "dine",
+   "tableId": 100,
+   "persons": 5,
+   "lines": [
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 149,
+     "qty": 3,
+     "variant": "Half",
+     "extras": [],
+     "note": "",
+     "void": true,
+     "voidReason": "customer changed mind",
+     "kot": 22
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 22
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 22
+    }
+   ],
+   "discount": null,
+   "complimentary": true,
+   "serviceCharge": true,
+   "billNo": "1247",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 0
+    }
+   ]
+  },
+  {
+   "id": 5047,
+   "no": 18,
+   "date": "2026-10-16",
+   "time": 1792164000000,
+   "type": "dine",
+   "tableId": 102,
+   "persons": 2,
+   "lines": [
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 23
+    },
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 23
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 23
+    },
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 23
+    }
+   ],
+   "discount": {
+    "type": "pct",
+    "value": 15,
+    "reason": "regular"
+   },
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1248",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 766
+    }
+   ]
+  },
+  {
+   "id": 5048,
+   "no": 19,
+   "date": "2026-10-16",
+   "time": 1792164600000,
+   "type": "dine",
+   "tableId": 104,
+   "persons": 2,
+   "lines": [
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 249,
+     "qty": 1,
+     "variant": "Full",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 24
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": true,
+   "billNo": "1249",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 137
+    },
+    {
+     "mode": "upi",
+     "amount": 137
+    }
+   ]
+  },
+  {
+   "id": 5049,
+   "no": 20,
+   "date": "2026-10-16",
+   "time": 1792165200000,
+   "type": "delivery",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 249,
+     "qty": 3,
+     "variant": "Full",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 25
+    }
+   ],
+   "discount": {
+    "type": "pct",
+    "value": 15,
+    "reason": "regular"
+   },
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1250",
+   "status": "settled",
+   "platform": "Phone",
+   "customer": {
+    "name": "Cust 49",
+    "phone": "9810388031"
+   },
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 667
+    }
+   ]
+  },
+  {
+   "id": 5050,
+   "no": 21,
+   "date": "2026-10-16",
+   "time": 1792165800000,
+   "type": "dine",
+   "tableId": 107,
+   "persons": 3,
+   "lines": [
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 1,
+     "variant": "",
+     "extras": [
+      {
+       "name": "Butter",
+       "price": 15.5
+      }
+     ],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 26
+    },
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 27
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1251",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 1188
+    }
+   ]
+  },
+  {
+   "id": 5051,
+   "no": 22,
+   "date": "2026-10-16",
+   "time": 1792166400000,
+   "type": "delivery",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 28
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 28
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1252",
+   "status": "settled",
+   "platform": "Zomato",
+   "customer": {
+    "name": "Cust 51",
+    "phone": "9810403869"
+   },
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 732
+    }
+   ]
+  },
+  {
+   "id": 5052,
+   "no": 23,
+   "date": "2026-10-16",
+   "time": 1792167000000,
+   "type": "dine",
+   "tableId": 107,
+   "persons": 3,
+   "lines": [
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 29
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1253",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 41
+    }
+   ]
+  },
+  {
+   "id": 5053,
+   "no": 24,
+   "date": "2026-10-16",
+   "time": 1792167600000,
+   "type": "dine",
+   "tableId": 102,
+   "persons": 2,
+   "lines": [
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 30
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 30
+    },
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 30
+    },
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": true,
+     "voidReason": "customer changed mind",
+     "kot": 30
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1254",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 433
+    }
+   ]
+  },
+  {
+   "id": 5054,
+   "no": 25,
+   "date": "2026-10-16",
+   "time": 1792168200000,
+   "type": "dine",
+   "tableId": 201,
+   "persons": 3,
+   "lines": [
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": true,
+     "voidReason": "customer changed mind",
+     "kot": 31
+    },
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 31
+    },
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 149,
+     "qty": 2,
+     "variant": "Half",
+     "extras": [
+      {
+       "name": "Extra cheese",
+       "price": 40
+      }
+     ],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 31
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": true,
+     "voidReason": "customer changed mind",
+     "kot": 31
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 31
+    }
+   ],
+   "discount": {
+    "type": "fixed",
+    "value": 50,
+    "reason": "promo"
+   },
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1255",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 647
+    }
+   ]
+  },
+  {
+   "id": 5055,
+   "no": 26,
+   "date": "2026-10-16",
+   "time": 1792168800000,
+   "type": "delivery",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 32
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 33
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1256",
+   "status": "settled",
+   "platform": "Zomato",
+   "customer": {
+    "name": "Cust 55",
+    "phone": "9810435545"
+   },
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 304
+    }
+   ]
+  },
+  {
+   "id": 5056,
+   "no": 27,
+   "date": "2026-10-16",
+   "time": 1792169400000,
+   "type": "dine",
+   "tableId": 203,
+   "persons": 2,
+   "lines": [
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 249,
+     "qty": 1,
+     "variant": "Full",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 34
+    }
+   ],
+   "discount": {
+    "type": "fixed",
+    "value": 100,
+    "reason": "promo"
+   },
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1257",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 78
+    },
+    {
+     "mode": "upi",
+     "amount": 78
+    }
+   ]
+  },
+  {
+   "id": 5057,
+   "no": 28,
+   "date": "2026-10-16",
+   "time": 1792170000000,
+   "type": "delivery",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 35
+    },
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 35
+    },
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 35
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 35
+    }
+   ],
+   "discount": {
+    "type": "fixed",
+    "value": 33.33,
+    "reason": "promo"
+   },
+   "complimentary": false,
+   "serviceCharge": true,
+   "billNo": "1258",
+   "status": "settled",
+   "platform": "Zomato",
+   "customer": {
+    "name": "Cust 57",
+    "phone": "9810451383"
+   },
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 694
+    },
+    {
+     "mode": "upi",
+     "amount": 695
+    }
+   ]
+  },
+  {
+   "id": 5058,
+   "no": 29,
+   "date": "2026-10-16",
+   "time": 1792170600000,
+   "type": "delivery",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 36
+    },
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 36
+    },
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 36
+    },
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 36
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1259",
+   "status": "settled",
+   "platform": "Swiggy",
+   "customer": {
+    "name": "Cust 58",
+    "phone": "9810459302"
+   },
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 406
+    }
+   ]
+  },
+  {
+   "id": 5059,
+   "no": 30,
+   "date": "2026-10-16",
+   "time": 1792171200000,
+   "type": "dine",
+   "tableId": 203,
+   "persons": 5,
+   "lines": [
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 37
+    },
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 37
+    },
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 37
+    }
+   ],
+   "discount": {
+    "type": "pct",
+    "value": 7.5,
+    "reason": "regular"
+   },
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1260",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 545
+    }
+   ]
+  },
+  {
+   "id": 5060,
+   "no": 1,
+   "date": "2026-10-17",
+   "time": 1792258200000,
+   "type": "dine",
+   "tableId": 200,
+   "persons": 3,
+   "lines": [
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 1
+    },
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 1
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 2
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1261",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 610
+    }
+   ]
+  },
+  {
+   "id": 5061,
+   "no": 2,
+   "date": "2026-10-17",
+   "time": 1792258800000,
+   "type": "dine",
+   "tableId": 106,
+   "persons": 4,
+   "lines": [
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 3
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 3
+    },
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 4
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1262",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 202
+    }
+   ]
+  },
+  {
+   "id": 5062,
+   "no": 3,
+   "date": "2026-10-17",
+   "time": 1792259400000,
+   "type": "dine",
+   "tableId": 103,
+   "persons": 4,
+   "lines": [
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 5
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 5
+    },
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 249,
+     "qty": 1,
+     "variant": "Full",
+     "extras": [
+      {
+       "name": "Extra cheese",
+       "price": 40
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 5
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 1,
+     "variant": "",
+     "extras": [
+      {
+       "name": "Raita",
+       "price": 35
+      }
+     ],
+     "note": "",
+     "void": true,
+     "voidReason": "customer changed mind",
+     "kot": 5
+    },
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 5
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1263",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 1031
+    }
+   ]
+  },
+  {
+   "id": 5063,
+   "no": 4,
+   "date": "2026-10-17",
+   "time": 1792260000000,
+   "type": "delivery",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 3,
+     "variant": "",
+     "extras": [
+      {
+       "name": "Butter",
+       "price": 15.5
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 6
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1264",
+   "status": "settled",
+   "platform": "Phone",
+   "customer": {
+    "name": "Cust 63",
+    "phone": "9810498897"
+   },
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 227
+    },
+    {
+     "mode": "upi",
+     "amount": 228
+    }
+   ]
+  },
+  {
+   "id": 5064,
+   "no": 5,
+   "date": "2026-10-17",
+   "time": 1792260600000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 8
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1265",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 72
+    }
+   ]
+  },
+  {
+   "id": 5065,
+   "no": 6,
+   "date": "2026-10-17",
+   "time": 1792261200000,
+   "type": "dine",
+   "tableId": 107,
+   "persons": 1,
+   "lines": [
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 9
+    },
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 249,
+     "qty": 2,
+     "variant": "Full",
+     "extras": [
+      {
+       "name": "Extra cheese",
+       "price": 40
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 9
+    },
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 9
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 9
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1266",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 1318
+    }
+   ]
+  },
+  {
+   "id": 5066,
+   "no": 7,
+   "date": "2026-10-17",
+   "time": 1792261800000,
+   "type": "dine",
+   "tableId": 101,
+   "persons": 3,
+   "lines": [
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 149,
+     "qty": 3,
+     "variant": "Half",
+     "extras": [
+      {
+       "name": "Extra cheese",
+       "price": 40
+      }
+     ],
+     "note": "",
+     "void": true,
+     "voidReason": "customer changed mind",
+     "kot": 10
+    },
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 10
+    },
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 10
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1267",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 634
+    }
+   ]
+  },
+  {
+   "id": 5067,
+   "no": 8,
+   "date": "2026-10-17",
+   "time": 1792262400000,
+   "type": "delivery",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 11
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 3,
+     "variant": "",
+     "extras": [
+      {
+       "name": "Raita",
+       "price": 35
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 11
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 2,
+     "variant": "",
+     "extras": [
+      {
+       "name": "Raita",
+       "price": 35
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 11
+    },
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 11
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1268",
+   "status": "settled",
+   "platform": "Phone",
+   "customer": {
+    "name": "Cust 67",
+    "phone": "9810530573"
+   },
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 811
+    },
+    {
+     "mode": "upi",
+     "amount": 811
+    }
+   ]
+  },
+  {
+   "id": 5068,
+   "no": 9,
+   "date": "2026-10-17",
+   "time": 1792263000000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 12
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1269",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 71
+    }
+   ]
+  },
+  {
+   "id": 5069,
+   "no": 10,
+   "date": "2026-10-17",
+   "time": 1792263600000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 13
+    },
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 13
+    },
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 149,
+     "qty": 1,
+     "variant": "Half",
+     "extras": [
+      {
+       "name": "Extra cheese",
+       "price": 40
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 14
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1270",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 1296
+    }
+   ]
+  },
+  {
+   "id": 5070,
+   "no": 11,
+   "date": "2026-10-17",
+   "time": 1792264200000,
+   "type": "delivery",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 15
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 15
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1271",
+   "status": "settled",
+   "platform": "Phone",
+   "customer": {
+    "name": "Cust 70",
+    "phone": "9810554330"
+   },
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 290
+    }
+   ]
+  },
+  {
+   "id": 5071,
+   "no": 12,
+   "date": "2026-10-17",
+   "time": 1792264800000,
+   "type": "dine",
+   "tableId": 103,
+   "persons": 3,
+   "lines": [
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 16
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 16
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1272",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 195
+    }
+   ]
+  },
+  {
+   "id": 5072,
+   "no": 13,
+   "date": "2026-10-17",
+   "time": 1792265400000,
+   "type": "dine",
+   "tableId": 104,
+   "persons": 5,
+   "lines": [
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 17
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1273",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 72
+    }
+   ]
+  },
+  {
+   "id": 5073,
+   "no": 14,
+   "date": "2026-10-17",
+   "time": 1792266000000,
+   "type": "dine",
+   "tableId": 200,
+   "persons": 3,
+   "lines": [
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 19
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1274",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 203
+    },
+    {
+     "mode": "upi",
+     "amount": 203
+    }
+   ]
+  },
+  {
+   "id": 5074,
+   "no": 15,
+   "date": "2026-10-17",
+   "time": 1792266600000,
+   "type": "dine",
+   "tableId": 203,
+   "persons": 1,
+   "lines": [
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 20
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 20
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1275",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 1090
+    }
+   ]
+  },
+  {
+   "id": 5075,
+   "no": 16,
+   "date": "2026-10-17",
+   "time": 1792267200000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 2,
+     "variant": "",
+     "extras": [
+      {
+       "name": "Raita",
+       "price": 35
+      }
+     ],
+     "note": "",
+     "void": true,
+     "voidReason": "customer changed mind",
+     "kot": 21
+    }
+   ],
+   "discount": {
+    "type": "fixed",
+    "value": 33.33,
+    "reason": "promo"
+   },
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1276",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 0
+    }
+   ]
+  },
+  {
+   "id": 5076,
+   "no": 17,
+   "date": "2026-10-17",
+   "time": 1792267800000,
+   "type": "dine",
+   "tableId": 203,
+   "persons": 3,
+   "lines": [
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 22
+    },
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 22
+    },
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 22
+    },
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 22
+    }
+   ],
+   "discount": null,
+   "complimentary": true,
+   "serviceCharge": false,
+   "billNo": "1277",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 0
+    }
+   ]
+  },
+  {
+   "id": 5077,
+   "no": 18,
+   "date": "2026-10-17",
+   "time": 1792268400000,
+   "type": "delivery",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 23
+    },
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 23
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 23
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1278",
+   "status": "settled",
+   "platform": "Phone",
+   "customer": {
+    "name": "Cust 77",
+    "phone": "9810609763"
+   },
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 169
+    }
+   ]
+  },
+  {
+   "id": 5078,
+   "no": 19,
+   "date": "2026-10-17",
+   "time": 1792269000000,
+   "type": "delivery",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 24
+    },
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 24
+    },
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 24
+    },
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 24
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1279",
+   "status": "settled",
+   "platform": "Swiggy",
+   "customer": {
+    "name": "Cust 78",
+    "phone": "9810617682"
+   },
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 523
+    },
+    {
+     "mode": "upi",
+     "amount": 523
+    }
+   ]
+  },
+  {
+   "id": 5079,
+   "no": 20,
+   "date": "2026-10-17",
+   "time": 1792269600000,
+   "type": "dine",
+   "tableId": 105,
+   "persons": 1,
+   "lines": [
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 25
+    },
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 25
+    },
+    {
+     "itemId": 402,
+     "name": "Fresh Lime Soda",
+     "price": 69,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 25
+    },
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 25
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1280",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 808
+    },
+    {
+     "mode": "upi",
+     "amount": 808
+    }
+   ]
+  },
+  {
+   "id": 5080,
+   "no": 21,
+   "date": "2026-10-17",
+   "time": 1792270200000,
+   "type": "dine",
+   "tableId": 100,
+   "persons": 1,
+   "lines": [
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 26
+    },
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 27
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1281",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 1726
+    }
+   ]
+  },
+  {
+   "id": 5081,
+   "no": 22,
+   "date": "2026-10-17",
+   "time": 1792270800000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 28
+    },
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 28
+    },
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 28
+    },
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 29
+    },
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 29
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1282",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 1548
+    }
+   ]
+  },
+  {
+   "id": 5082,
+   "no": 23,
+   "date": "2026-10-17",
+   "time": 1792271400000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 30
+    }
+   ],
+   "discount": null,
+   "complimentary": true,
+   "serviceCharge": false,
+   "billNo": "1283",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 0
+    }
+   ]
+  },
+  {
+   "id": 5083,
+   "no": 24,
+   "date": "2026-10-17",
+   "time": 1792272000000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 32
+    },
+    {
+     "itemId": 102,
+     "name": "Chicken 65",
+     "price": 279.5,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 32
+    },
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 33
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1284",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 397
+    },
+    {
+     "mode": "upi",
+     "amount": 397
+    }
+   ]
+  },
+  {
+   "id": 5084,
+   "no": 25,
+   "date": "2026-10-17",
+   "time": 1792272600000,
+   "type": "dine",
+   "tableId": 101,
+   "persons": 5,
+   "lines": [
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 34
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1285",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "cash",
+     "amount": 47
+    }
+   ]
+  },
+  {
+   "id": 5085,
+   "no": 26,
+   "date": "2026-10-17",
+   "time": 1792273200000,
+   "type": "dine",
+   "tableId": 105,
+   "persons": 5,
+   "lines": [
+    {
+     "itemId": 201,
+     "name": "Dal Makhani",
+     "price": 219,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "less spicy",
+     "void": false,
+     "voidReason": "",
+     "kot": 35
+    },
+    {
+     "itemId": 301,
+     "name": "Butter Naan",
+     "price": 45,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 35
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 36
+    },
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 36
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1286",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 1807
+    }
+   ]
+  },
+  {
+   "id": 5086,
+   "no": 27,
+   "date": "2026-10-17",
+   "time": 1792273800000,
+   "type": "takeaway",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 2,
+     "variant": "",
+     "extras": [
+      {
+       "name": "Butter",
+       "price": 15.5
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 37
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1287",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 303
+    }
+   ]
+  },
+  {
+   "id": 5087,
+   "no": 28,
+   "date": "2026-10-17",
+   "time": 1792274400000,
+   "type": "dine",
+   "tableId": 202,
+   "persons": 5,
+   "lines": [
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 39
+    },
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 39
+    },
+    {
+     "itemId": 202,
+     "name": "Butter Chicken",
+     "price": 329,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 39
+    },
+    {
+     "itemId": 103,
+     "name": "Egg Bhurji",
+     "price": 129,
+     "qty": 3,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 39
+    }
+   ],
+   "discount": {
+    "type": "fixed",
+    "value": 50,
+    "reason": "promo"
+   },
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1288",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "card",
+     "amount": 822
+    }
+   ]
+  },
+  {
+   "id": 5088,
+   "no": 29,
+   "date": "2026-10-17",
+   "time": 1792275000000,
+   "type": "delivery",
+   "tableId": null,
+   "persons": 0,
+   "lines": [
+    {
+     "itemId": 401,
+     "name": "Masala Chaas",
+     "price": 39,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 40
+    }
+   ],
+   "discount": null,
+   "complimentary": false,
+   "serviceCharge": false,
+   "billNo": "1289",
+   "status": "settled",
+   "platform": "Swiggy",
+   "customer": {
+    "name": "Cust 88",
+    "phone": "9810696872"
+   },
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 41
+    }
+   ]
+  },
+  {
+   "id": 5089,
+   "no": 30,
+   "date": "2026-10-17",
+   "time": 1792275600000,
+   "type": "dine",
+   "tableId": 201,
+   "persons": 4,
+   "lines": [
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 2,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 41
+    },
+    {
+     "itemId": 302,
+     "name": "Tandoori Roti",
+     "price": 22.5,
+     "qty": 1,
+     "variant": "",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 41
+    },
+    {
+     "itemId": 203,
+     "name": "Veg Biryani",
+     "price": 199.99,
+     "qty": 3,
+     "variant": "",
+     "extras": [
+      {
+       "name": "Raita",
+       "price": 35
+      }
+     ],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 42
+    },
+    {
+     "itemId": 101,
+     "name": "Paneer Tikka",
+     "price": 149,
+     "qty": 3,
+     "variant": "Half",
+     "extras": [],
+     "note": "",
+     "void": false,
+     "voidReason": "",
+     "kot": 42
+    }
+   ],
+   "discount": null,
+   "complimentary": true,
+   "serviceCharge": false,
+   "billNo": "1290",
+   "status": "settled",
+   "platform": "",
+   "customer": null,
+   "payments": [
+    {
+     "mode": "upi",
+     "amount": 0
+    }
+   ]
+  }
+ ]
+}

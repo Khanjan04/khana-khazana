@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Git pre-commit (covers Cursor and humans too): reject commits touching protected paths
+# unless ALLOW_PROTECTED=1 is set explicitly by YOU (e.g. Day 1 backup, Day 8 golden fixture).
+# Enabled by `npm install` (package.json "prepare" sets core.hooksPath=.githooks).
+[ "$ALLOW_PROTECTED" = "1" ] && exit 0
+bad=$(git diff --cached --name-status | awk '
+  $2 ~ /^test\/golden\// || $2 == "test/totals.golden.test.js" || $2 ~ /^legacy\// { print; next }
+  $2 ~ /^server\/migrations\/0/ && $1 != "A" { print }')
+if [ -n "$bad" ]; then
+  echo "pre-commit: protected paths changed:" >&2
+  echo "$bad" >&2
+  echo "Fix the implementation instead. If this is intentional (Day 1/8), re-run with ALLOW_PROTECTED=1." >&2
+  exit 1
+fi
+exit 0

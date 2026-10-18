@@ -1,0 +1,13 @@
+---
+description: Money, rounding, GST and service-charge rules (billing code)
+globs: server/domain/**/*.js, server/commands/bill.js
+alwaysApply: false
+---
+- server/domain/totals.js is an EXACT port of the legacy calcTotals. Keep
+  r2 = Math.round((n+Number.EPSILON)*100)/100 and total = Math.round(raw). Never "improve" rounding or tax logic.
+- Legacy arithmetic works in rupees (floats); storage is integer paise; convert only at the edge (toPaise/fromPaise).
+- test/totals.golden.test.js + test/golden/** are PROTECTED. If golden parity fails, fix the port, never the fixture.
+- Service charge: never default, never relabelled, opt-in per bill on customer consent, separate line,
+  not added before GST (CCPA guidelines; Delhi HC 28 Mar 2025).
+- Bill numbers: host-assigned, consecutive per financial year, ≤16 chars (GST Rule 46(b)), e.g. KK1/26-27/000123.
+- Composition scheme -> "Bill of Supply", no tax lines.

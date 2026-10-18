@@ -1,0 +1,9 @@
+---
+description: Core project rules for KhanaKhajana offline POS
+alwaysApply: true
+---
+Follow CLAUDE.md in the repo root exactly; it is the source of truth. Plain JS ESM + JSDoc,
+Node 24, node:sqlite via server/db.js, `ws` only, no native modules, no build step;
+browser code must work on insecure http LAN origins, host-authoritative protocol.
+Never edit: test/golden/**, test/totals.golden.test.js, legacy/**, committed migrations.
+One task per change; run `npm run typecheck && npm test` before declaring done.
