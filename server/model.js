@@ -8,26 +8,35 @@ export const newId = () => randomUUID();
 
 /** Defaults for every setting key. settings.update only accepts these keys. */
 export const SETTING_DEFAULTS = Object.freeze({
-  name: 'Khana Khajana',
+  name: 'KHANAKHAJANA',
   address: '',
   phone: '',
   gstin: '',
   fssai: '',
   placeOfSupply: '',
   sacCode: '996331',
-  cgst: 2.5,
-  sgst: 2.5,
-  specifiedPremises: false,     // 18% with ITC — off by default
+  footer: 'Thank you! Visit again.',
+  // tax list exactly like the legacy app: printed one line each, fixed by the Owner in advance
+  taxes: /** @type {{name: string, rate: number}[]} */ ([{ name: 'CGST', rate: 2.5 }, { name: 'SGST', rate: 2.5 }]),
+  taxOnDelivery: false,         // charge tax on the delivery charge too
+  defaultDelivery: 0,           // ₹ pre-filled on new delivery orders
+  specifiedPremises: false,     // 18% with ITC (CGST 9 + SGST 9) — overrides the tax list; off by default
   compositionScheme: false,     // Bill of Supply, no tax lines
   serviceChargePct: 5,          // only ever applied when toggled ON for a bill (CCPA)
+  askCustomer: true,            // ask customer name & mobile before printing the bill
+  reasonAll: false,             // ask a reason for every deleted item, not only items sent to the kitchen
+  allowOpenItem: true,          // biller may type an item name + price
+  otherTypes: /** @type {string[]} */ (['Google Pay', 'PhonePe', 'Paytm', 'Amazon Pay', 'Other']),
+  custTags: /** @type {{id: string, name: string, disc: number}[]} */ ([]),  // e.g. School 20%
   billPrefix: 'KK1',            // ≤3 chars so KK1/26-27/000123 fits 16 chars
   dayStartHour: 4,              // orders before 04:00 belong to the previous business day
   paper: 80,                    // 58 | 80 mm
-  footer: 'Thank you! Visit again.',
   kotAutoPrint: false,
   billPrintMode: 'browser',     // default client adapter: host-lan | rawbt | browser
   printers: /** @type {Record<string, {ip: string, port?: number}>} */ ({}), // { kitchen: {ip, port}, bar, bill }
   fallbackHosts: /** @type {string[]} */ ([]), // other host origins clients may fail over to, e.g. 'http://192.168.1.20:8080'
+  supportPhone: '9909008696',   // shown on every screen, as in the legacy app
+  supportEmail: 'piyush.varma06@yahoo.com',
 });
 
 /** @param {any} db @returns {typeof SETTING_DEFAULTS & Record<string, any>} */
@@ -92,7 +101,7 @@ export function nextCounter(db, name, period) {
 // ---- entity readers (rows sent to clients) ----
 
 const camelKey = (/** @type {string} */ k) => k.replace(/_([a-z])/g, (_, c) => c.toUpperCase());
-const JSON_COLS = new Set(['extras', 'snapshot', 'summary', 'detail']);
+const JSON_COLS = new Set(['extras', 'snapshot', 'summary', 'detail', 'taxes']);
 const PRIVATE_COLS = new Set(['pin_hash', 'pin_salt', 'failed', 'locked_until', 'token_hash']);
 
 /** @param {Record<string, any>} r */
@@ -108,7 +117,7 @@ export function camel(r) {
 
 /** Tables replicated to clients (entity name = table name). */
 export const ENTITIES = Object.freeze([
-  'sections', 'dining_tables', 'menu_groups', 'menu_subgroups', 'items', 'kitchen_notes',
+  'sections', 'dining_tables', 'menu_groups', 'menu_subgroups', 'items', 'sides', 'kitchen_notes',
   'users', 'roles', 'devices', 'customers', 'orders', 'order_lines', 'kots', 'bills', 'bill_payments',
 ]);
 
@@ -124,8 +133,7 @@ export function readEntity(db, table, id) {
   if (!r) return null;
   const o = camel(r);
   if (table === 'items') {
-    o.variants = all(db, 'SELECT id, name, price_paise FROM variants WHERE item_id=? ORDER BY sort, name', id).map(camel);
-    o.extras = all(db, 'SELECT id, name, price_paise FROM extras WHERE item_id=? ORDER BY sort, name', id).map(camel);
+    o.variants = all(db, 'SELECT id, name, price_paise FROM variants WHERE item_id=? ORDER BY sort, rowid', id).map(camel);
   }
   return o;
 }

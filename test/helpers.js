@@ -46,12 +46,13 @@ export function seedMenu(t) {
   const g = t.cmd('owner', 'menu.group.save', { name: 'Main' }).id;
   const s = t.cmd('owner', 'layout.section.save', { name: 'Hall' }).id;
   const tables = ['1', '2', '3', '4'].map((name) => t.cmd('owner', 'layout.table.save', { sectionId: s, name }).id);
-  const dal = t.cmd('owner', 'menu.item.save', { name: 'Dal', code: '1', pricePaise: 21900, groupId: g }).id;
-  const naan = t.cmd('owner', 'menu.item.save', { name: 'Naan', code: '2', pricePaise: 4500, groupId: g }).id;
+  const cheese = t.cmd('owner', 'side.save', { name: 'Cheese', pricePaise: 4000 }).id;
+  const dal = t.cmd('owner', 'menu.item.save', { name: 'Dal', code: 'DAL', num: 1, pricePaise: 21900, groupId: g }).id;
+  const naan = t.cmd('owner', 'menu.item.save', { name: 'Naan', code: 'NAN', num: 2, pricePaise: 4500, groupId: g }).id;
   const tikka = t.cmd('owner', 'menu.item.save', {
-    name: 'Paneer Tikka', code: '3', pricePaise: 24900, groupId: g,
-    variants: [{ name: 'Half', pricePaise: 14900 }, { name: 'Full', pricePaise: 24900 }], extras: [{ name: 'Cheese', pricePaise: 4000 }],
+    name: 'Paneer Tikka', code: 'PTK', num: 3, pricePaise: 24900, groupId: g, allowSides: true,
+    variants: [{ name: 'Half', pricePaise: 14900 }, { name: 'Full', pricePaise: 24900 }],
   }).id;
-  const lime = t.cmd('owner', 'menu.item.save', { name: 'Lime soda', code: '9', pricePaise: 6900, groupId: g, station: 'bar' }).id;
-  return { group: g, section: s, tables, items: { dal, naan, tikka, lime } };
+  const lime = t.cmd('owner', 'menu.item.save', { name: 'Lime soda', num: 9, pricePaise: 6900, groupId: g, station: 'bar' }).id;
+  return { group: g, section: s, tables, sides: { cheese }, items: { dal, naan, tikka, lime } };
 }

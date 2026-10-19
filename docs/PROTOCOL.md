@@ -88,7 +88,7 @@ command leaves its outbox.
 
 ## Entities (replicated tables)
 
-`sections, dining_tables, menu_groups, menu_subgroups, items (+variants[], extras[]), kitchen_notes,
+`sections, dining_tables, menu_groups, menu_subgroups, items (+variants[]), sides, kitchen_notes,
 users (no PIN fields), roles (+rights[]), devices (no token), customers, orders, order_lines, kots,
 bills (snapshot parsed), bill_payments` — rows are camelCased columns (`price_paise` → `pricePaise`).
 Pseudo-entities: `settings` (id `settings`, full settings object), `meta` (id `businessDate`),
@@ -102,38 +102,45 @@ Money is **integer paise** everywhere on the wire. Bills carry a frozen `snapsho
 
 | type | right | payload | result |
 |---|---|---|---|
-| `order.open` | order | `{type:'dine'\|'takeaway'\|'delivery', tableId?}` (dine reuses the table's active order) | `{orderId, no}` |
+| `order.open` | order | `{type:'dine'\|'takeaway'\|'delivery', tableId?, platform?, platformRef?, customer?:{name,phone,address}}` (dine reuses the table's active order; pickup/delivery get a daily ref like PK1 / ZM2) | `{orderId, no, ref}` |
 | `order.line.add` | order | `{orderId \| tableId \| type, lines:[Line]}` | `{orderId, lineIds}` |
 | `order.line.update` | order | `{lineId, qty?, note?}` — unsent lines only | |
-| `order.line.remove` | order | `{lineId}` — unsent lines only | |
+| `order.line.remove` | order | `{lineId, reason?}` — unsent lines only; `reason` required when setting `reasonAll` is on (then logged) | |
 | `order.line.void` | order + void *(appr.)* | `{lineId, reason, qty?}` (partial void splits the line) | `{lineId}` |
 | `order.hold` | order | `{orderId, held}` | |
 | `order.persons` | order | `{orderId, persons}` | |
 | `order.comment` | order | `{orderId, comment}` | |
-| `order.customer` | order | `{orderId, phone, name?, address?}` or `{orderId, customerId}` | `{customerId}` |
-| `order.delivery` | delivery | `{orderId, platform:'Zomato'\|'Swiggy'\|'Phone'\|'Other', ref?}` | |
+| `order.customer` | order | `{orderId, phone, name?, address?, locality?, tag?}` or `{orderId, customerId}` — remembers the customer | `{customerId}` |
+| `order.delivery` | delivery | `{orderId, platform:'Zomato'\|'Swiggy'\|'Phone call'\|'Other', ref?}` | |
+| `order.delivery.charge` | delivery | `{orderId, amountPaise}` | |
 | `order.cancel` | order + void *(appr.)* | `{orderId, reason}` | |
 | `table.transfer` | table.transfer | `{orderId, toTableId}` (target must be free) | |
 | `kot.create` | kot | `{orderId \| tableId (+type), lines?:[Line], note?}` — sends all unsent lines, one KOT per station | `{orderId, orderNo, kots:[{id,no,station}]}` |
 | `kot.status` | kitchen.status; `served` → serve; `cancelled` → void *(appr.)* | `{kotId, to, reason?}` (reason required for rejected/cancelled) | `{kotId, status}` |
 | `kot.recall` | kitchen.status | `{kotId}` — undo last kitchen status within 2 min | `{kotId, status}` |
-| `bill.print` | bill; with discount/complimentary → discount *(appr.)* | `{orderId, discount?:{type:'pct'\|'fixed', value, reason}, complimentary?: reason, serviceCharge?: true, print?: 'host-lan'}` | `{billId, no, totalPaise}` |
+| `bill.print` | bill; with discount/complimentary → discount *(appr.)* | `{orderId, discount?:{type:'pct'\|'fixed', value (₹ for fixed), reason?}, complimentary?: true\|reason, complimentaryReason?, serviceCharge?: true, print?: 'host-lan'}` — pct ≤ 100, fixed ≤ subtotal; totals = legacy calcTotals (taxes list, delivery, comp) | `{billId, no, totalPaise}` |
 | `bill.reprint` | bill.reprint | `{billId, print?}` | `{billId, reprints}` |
 | `bill.void` | bill + void *(appr.)* | `{billId, reason}` — unsettled bills; order re-opens | |
-| `bill.settle` | bill; waive > 0 → discount *(appr.)* | `{billId, payments:[{mode:'cash'\|'card'\|'upi'\|'due'\|'other', amount, phone?}], tip?, waive?, waiveReason?}` — Σpayments must equal total + tip − waive (paise); `due` needs customers.due + customer | `{billId, paidPaise}` |
-| `bill.split` | bill | `{billId, ways}` | `{parts:[paise]}` |
+| `bill.settle` | bill; waive > 0 → discount *(appr.)* | `{billId, payments:[{mode:'cash'\|'card'\|'upi'\|'due'\|'other', amount, otherType?}], tip?, waive?, waiveReason?, tendered?, customer?:{name, phone}}` — Σpayments must equal total + tip − waive (paise); `tendered` ≥ cash part gives change; `due` needs customers.due + name + 10–13 digit mobile, no waive | `{billId, paidPaise, changePaise}` |
+| `bill.split` | bill | `{billId, ways}` — whole-rupee shares, the last takes the rest (legacy) | `{parts:[paise]}` |
 | `due.receive` | customers.due | `{customerId, amount, mode}` | `{duePaise}` |
 | `dayclose` | dayclose | `{date?, force?}` — refuses with open orders unless `force` | `{date, next, summary}` |
+| `cash.count` | reports | `{date?, countedPaise}` — cash counted in the drawer for a business day | |
 | `print.kot` | kot.reprint | `{kotId}` | `{queued}` |
 | `print.bill` | bill | `{billId}` | `{queued}` |
 | `print.test` | settings | `{station}` | `{queued}` |
 | `menu.group.save` / `.delete` | menu | `{id?, name, sort?}` / `{id}` (≤12 groups) | `{id}` |
 | `menu.subgroup.save` / `.delete` | menu | `{id?, groupId, name, sort?}` / `{id}` (≤10 per group) | `{id}` |
-| `menu.item.save` | menu | `{id?, name, code?, pricePaise, groupId, subgroupId?, diet, station?, favourite?, active?, sort?, variants?:[{name,pricePaise}], extras?:[{name,pricePaise}], imageData?: dataURL\|null}` (≤100 items) | `{id}` |
+| `menu.item.save` | menu | `{id?, name, code? (3 letters, auto), num? (auto), pricePaise, groupId, subgroupId?, diet:'veg'\|'nonveg'\|'egg'\|'none', station?, favourite?, available?, allowSides?, sort?, variants?:[{name,pricePaise}], imageData?: dataURL\|null}` (≤100 per sub-group) | `{id}` |
+| `menu.item.bulk` | menu | `{groupId, subgroupId?, items:[{name, pricePaise}]}` (codes/numbers auto) | `{added}` |
+| `menu.item.available` / `.favourite` | menu | `{id, available}` / `{id, favourite}` | |
+| `menu.move` | menu | `{kind:'group'\|'subgroup'\|'item', id, dir:-1\|1}` | |
+| `side.save` / `.delete` | menu | `{id?, name, pricePaise}` / `{id}` — global extras (≤40) | `{id}` |
 | `menu.item.delete` | menu | `{id}` (soft delete) | |
 | `kitchen_note.save` / `.delete` | menu | `{id?, text}` / `{id}` | `{id}` |
-| `layout.section.save` / `.delete` | layout | `{id?, name, sort?}` / `{id}` (≤10 sections) | `{id}` |
-| `layout.table.save` / `.delete` | layout | `{id?, sectionId, name, seats?, sort?}` / `{id}` | `{id}` |
+| `layout.section.save` / `.delete` | layout | `{id?, name, sort?, prefix?, rows?, cols?, seats? ('4,6'), standing?, startNo?, enabled?}` / `{id}` (≤10 sections; switching on with no tables builds them) | `{id}` |
+| `layout.section.build` | layout | `{id}` — rows × cols tables named prefix+startNo…, keeps ids by position | `{tables}` |
+| `layout.table.save` / `.delete` | layout | `{id?, sectionId, name (unique), seats?, standing?, rowNo?, sort?}` / `{id}` (delete refused while the table has a running order) | `{id}` |
 | `settings.update` | settings | `{patch:{<known keys>}}` | |
 | `user.save` | users | `{id?, name, roleId, pin? (4–8 digits), active?}` (≤100) | `{id}` |
 | `user.unlock` | users | `{id}` | |
@@ -142,7 +149,9 @@ Money is **integer paise** everywhere on the wire. Bills carry a frozen `snapsho
 | `device.revoke` | device.manage | `{deviceId}` — sockets closed with 4001 immediately | |
 | `device.rename` | device.manage | `{deviceId, name}` | |
 
-`Line` = `{itemId, qty, variant?, extras?:[name], note?}` or open item `{name, pricePaise, qty, note?, station?}`.
+`Line` = `{itemId, qty, variant? (id or name; required when the dish has variations), sides?:[{id, qty}] (dish must allow extras), notes?:[kitchen note text], note?}`
+or open item `{name, pricePaise, qty, note?, station?}` (setting `allowOpenItem`). Dishes switched to "Not available" are refused (`NOT_AVAILABLE`).
+On the wire a line's `extras` are `[{id, name, pricePaise, qty}]`; line total = unit × qty + Σ extra × its own qty (legacy).
 Prices are always taken from the host's menu, never from the client.
 
 ### KOT state machine
@@ -166,7 +175,7 @@ Lines on rejected/cancelled KOTs are voided with a `void_log` entry.
 |---|---|---|
 | `GET /health` | – | `{ok, seq, node, version, uptime, restarts, lastBackup, clients, businessDate}` |
 | `GET /api/info` | – | `{name, needsSetup, loopback, ips, port, epoch, version}` |
-| `POST /api/setup` | loopback, first run only | `{ownerName, pin, restaurantName}` → device + session + `recoveryCode` |
+| `POST /api/setup` | loopback, first run only | `{ownerName, pin, restaurantName, loadDefaults?}` → device + session + `recoveryCode` + `staff` (Manager 2222, Captain 1111, Kitchen 3333 always created) + `seeded` counts when `loadDefaults` loads the KHANAKHAJANA menu/tables/extras/notes |
 | `POST /api/recover` | loopback | `{code, pin}` resets the owner PIN |
 | `POST /api/pair/claim` | 10/min/IP | `{code, kind, name}` → `{deviceId, deviceToken, kind}` |
 | `GET /api/users` | device | users for the login picker |
@@ -175,9 +184,11 @@ Lines on rejected/cancelled KOTs are voided with a `void_log` entry.
 | `POST /api/cmd` | session | same as a WS `cmd` (fallback / scripts) |
 | `GET /api/print/render?kind=kot\|bill\|test&id=&cols=` | kot/bill rights | `{b64}` ESC/POS bytes for RawBT |
 | `GET /api/print/jobs`, `POST /api/print/retry` | settings/bill | host LAN print queue |
-| `GET /api/reports/day?date=` | reports | day-end tally |
-| `GET /api/history?date=` | history | bills with snapshots + payments |
-| `GET /api/export/csv?date=` | export | bills CSV |
+| `GET /api/reports/day?date=` | reports | day-end tally (one day, flat) |
+| `GET /api/reports?from=&to=` | reports | `{tally, visitors, tables, items, voids, dues}` for a date range |
+| `GET /api/history?from=&to=` (or `date=`) | history or bill | bills with snapshots + payments |
+| `GET /api/export/csv?from=&to=` | export | bills CSV (UTF-8 BOM for Excel) |
 | `GET /api/export/json` | export | owner JSON export (no PIN/token hashes) |
 | `GET /api/backups`, `POST /api/backups`, `GET /api/backups/download?file=` | settings | |
 | `POST /api/restore` | settings | `{file, confirm:'RESTORE'}` — takes a pre-restore backup, swaps the DB, new epoch |
+| `POST /api/import/legacy` | settings | raw body = the old app's backup `.json` (≤60 MB); pre-import backup, then `{skipped, source, imported, equal, warnings}`; every phone resyncs (4010) |

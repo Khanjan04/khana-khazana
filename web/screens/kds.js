@@ -97,7 +97,7 @@ function card(k, now) {
       h('span.age', ago(age))),
     h('ul', lines.map((l) => h('li' + (l.voided ? '.void' : ''),
       h('b', `${l.qty} × `), l.name, l.variant ? ` (${l.variant})` : '',
-      (l.extras || []).length ? h('div.small', '+ ' + l.extras.map((/** @type {any} */ e) => e.name).join(', ')) : null,
+      (l.extras || []).length ? h('div.small', 'Sides: ' + l.extras.map((/** @type {any} */ e) => `${e.name} - ${e.qty ?? 1}`).join(', ')) : null,
       l.note ? h('div.note', '» ' + l.note) : null))),
     k.note ? h('div.note', 'Note: ' + k.note) : null,
     o?.comment ? h('div.note', 'Order: ' + o.comment) : null,

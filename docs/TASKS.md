@@ -6,7 +6,7 @@ Status: ✅ implemented + tested in this repo · 🧑 needs you (hardware, real 
 |---|---|---|---|
 | D01-T1 | Create repo structure per GUIDE §2, package.json scripts, jsconfig checkJs; no logic | ✅ | repo root |
 | D01-T2 | POC server → server/server.js + db.js adapter (§5.1); static web/; /health {ok,seq,node,uptime}; test/health.test.js on random port | ✅ | `server/server.js`, `server/db.js`, `test/health.test.js` |
-| D01-M | You: CLAUDE.md, rules, hook, pre-commit, copy legacy/ and a real backup to test/golden/backup_v13.json | 🧑 | legacy/README.md (files not in the PDF) |
+| D01-M | You: CLAUDE.md, rules, hook, pre-commit, copy legacy/ and a real backup to test/golden/backup_v13.json | ✅ 🧑 | `legacy/khanakhajana_v13.html` added; backup is a sample made by the legacy code — swap in a real one |
 | D02-T1 | 001_init.sql (settings, counters, ops, events, users, devices, orders, order_lines, kots, kot_status_log) + migration runner | ✅ | `server/migrations/001_init.sql` |
 | D02-T2 | engine.js per §5.2; tests: duplicate opId → one event, same result; failing handler rolls back; seq strictly increasing | ✅ | `test/engine.test.js` |
 | D02-T3 | kot.create (order auto-open, KOT no from counters, daily reset) + kot.status machine; invalid → BAD_TRANSITION | ✅ | `server/commands/kot.js`, `test/kot.test.js` |
@@ -20,9 +20,9 @@ Status: ✅ implemented + tested in this repo · 🧑 needs you (hardware, real 
 | D05-M | You: host screen off 30 min, airplane-mode captain mid-order, restart Termux; POC exit checks; tag v0.1-poc | 🧑 | |
 | D06-T1 | 002_full.sql: every PLAN §7 table, money INTEGER paise, FKs, indexes | ✅ | `server/migrations/002_full.sql` |
 | D06-T2 | rights.js with 24 rights + default roles; rights.test.js asserts PLAN §8 exactly | ✅ | `server/rights.js`, `test/rights.test.js` |
-| D07-T1 | import/v13.js: every entity; scrypt PINs; images → data/images/<sha1>; counters continue; legacy KOTs 'accepted'; legacy_import hash; re-run no-op; counts equal source | ✅ ⚠️ | `server/import/v13.js`, `test/import.test.js` — field names assumed (docs/V13_FORMAT.md); check against a real backup |
-| D08-T1 | Export calcTotals/r2 unchanged; scripts/make-golden.js runs LEGACY calcTotals via node:vm → expected_totals.json | ✅ 🧑 | `scripts/make-golden.js` (verified with a mock legacy HTML). **You:** paste the verbatim legacy function, regenerate from the real file |
-| D08-T2 | totals.golden.test.js compares every bill field; 0 differences | ✅ | `test/totals.golden.test.js` (currently vs bootstrap fixture) |
+| D07-T1 | import/v13.js: every entity; scrypt PINs; images → data/images/<sha1>; counters continue; legacy KOTs 'accepted'; legacy_import hash; re-run no-op; counts equal source | ✅ | `server/import/v13.js` (real format, docs/V13_FORMAT.md), `test/import.test.js`, HTTP `POST /api/import/legacy` + Admin › Backups |
+| D08-T1 | Export calcTotals/r2 unchanged; scripts/make-golden.js runs LEGACY calcTotals via node:vm → expected_totals.json | ✅ | `server/domain/totals.js` is the verbatim legacy function; `scripts/make-golden.js` runs it from `legacy/khanakhajana_v13.html` |
+| D08-T2 | totals.golden.test.js compares every bill field; 0 differences | ✅ | `test/totals.golden.test.js` vs the real legacy calcTotals (70 bills / open orders) |
 | D09-T1..T3 | Menu CRUD with legacy limits, layout CRUD, settings.update, users CRUD (≤100, PIN 4–8); right checks + tests | ✅ | `server/commands/admin.js`, `test/admin.test.js` |
 | D10-T1 | auth.js: pair.create, pair.claim → device token, login → session, scrypt + timingSafeEqual, lockout, logout, device.revoke | ✅ | `server/auth.js`, `test/auth.test.js` |
 | D10-T2 | Login + pair screens | ✅ | `web/screens/{setup,pair,login}.js` |
@@ -46,3 +46,18 @@ Status: ✅ implemented + tested in this repo · 🧑 needs you (hardware, real 
 | D22–D23 | Pilots | 🧑 | docs/PILOT.md |
 | D24-T1 | Idempotent scripts/install.sh; owner guide, install sheet, troubleshooting card | ✅ ⚠️ | `scripts/install.sh` (syntax-checked, not run on a phone here), docs/ |
 | D25 | Launch checklist, tag v1.0.0, tarball + checksum | ✅ 🧑 | `scripts/release.sh`, docs/LAUNCH_CHECKLIST.md |
+
+## Legacy parity pass (from legacy/khanakhajana_v13.html)
+
+| ID | Task | Status | Where / proof |
+|---|---|---|---|
+| P-01 | Owner-only registration; Manager 2222 / Captain 1111 / Kitchen 3333 created at setup; optional KHANAKHAJANA menu (186 dishes, photos), 26 tables, extras, notes | ✅ | `server/seed/`, `server/auth.js#setup`, `web/screens/setup.js`, `test/parity.test.js`, `test/server.test.js` |
+| P-02 | Money = legacy calcTotals: taxes list, tax on delivery, delivery charge, complimentary, pct/fix discount caps, extras with own qty; whole-rupee split | ✅ | `server/domain/totals.js`, `test/totals*.test.js`, `test/bill.test.js` |
+| P-03 | Menu: 3-letter code + number, Short Code box, search over group/sub-group/variation, available switch, favourites, ▲▼ order, bulk add, diet "No mark", allow extras | ✅ | `server/commands/admin.js`, `server/domain/codes.js`, `web/screens/order.js`, `web/screens/admin.js` |
+| P-04 | Global extras (sides) with quantity, multi kitchen notes, notes for part of a quantity, open item setting | ✅ | `side.*`, `web/screens/order.js` |
+| P-05 | Home (Dining / Delivery-App / Pickup), delivery & pickup lists with daily refs (ZM1, PK2), held orders, customer panel with lookup + tags, delivery charge | ✅ | `web/screens/{home,orders,order}.js`, `server/commands/order.js` |
+| P-06 | Table view with sections, rows, seat pips, standing tables, states, KOT eye/print icons; layout builder (prefix, rows × cols, seats per row, start no) | ✅ | `web/screens/tables.js`, `layout.section.build` |
+| P-07 | Bill: quick discounts, customer-tag discount, ask customer, unsent-items warning; settle Cash (given/return), Card, UPI, Due (name+mobile), Other types, Part, tip, settlement amount | ✅ | `web/screens/bill.js`, `server/commands/bill.js`, `test/settle.test.js` |
+| P-08 | Reports for date ranges: tally check, cash counted vs expected, visitors, table time, most ordered, deleted items, CSV/print; Bill History + Bill No finder | ✅ | `server/reports.js`, `web/screens/{reports,bills}.js`, `test/reports.test.js`, `test/parity.test.js` |
+| P-09 | Legacy KOT / bill print layout (KOT - n, Sides: x - n, [Note]; taxes list, paid-by, cash given/returned) | ✅ | `server/print/render.js`, `web/print.js` |
+| P-10 | Browser E2E updated: default users, legacy menu, popup with variation/extra/note, discount, cash change, offline KOT | ✅ | `test/e2e/three-phones.e2e.js` |

@@ -1,5 +1,6 @@
 // @ts-check
 // Client replica: snapshot + events. Read-only view of host state; never the source of truth.
+import { billTotals, totalsToPaise, linePaise } from '../server/domain/totals.js';
 
 const CACHE = 'pos.cache';
 
@@ -108,5 +109,29 @@ export const kotsOf = (orderId) => list('kots').filter((k) => k.orderId === orde
 /** @param {string} orderId */
 export const openBillOf = (orderId) => list('bills').find((b) => b.orderId === orderId && b.status !== 'void' && b.status !== 'settled')
   ?? list('bills').filter((b) => b.orderId === orderId && b.status === 'settled').sort((a, b) => b.createdAt - a.createdAt)[0];
-/** @param {any} l */
-export const lineTotal = (l) => (l.unitPaise + (l.extras || []).reduce((/** @type {number} */ a, /** @type {any} */ e) => a + e.pricePaise, 0)) * l.qty;
+/** Legacy line total in paise: unit × qty + Σ(extra × its own qty). @param {any} l */
+export const lineTotal = (l) => linePaise(l);
+
+/**
+ * Preview totals of an order (+ optional draft lines) with the SAME code the host bills with.
+ * Draft lines: {unitPaise, qty, extras:[{pricePaise, qty}]}.
+ * @param {any} o order row (may be null for a new table) @param {any[]} [draft]
+ */
+export function orderTotals(o, draft = []) {
+  const lines = [...(o ? linesOf(o.id) : []), ...draft];
+  const legacy = {
+    lines: lines.map((l) => ({ price: l.unitPaise / 100, qty: l.qty, void: !!l.voided, extras: (l.extras || []).map((/** @type {any} */ e) => ({ price: e.pricePaise / 100, qty: e.qty ?? 1 })) })),
+    delivery: (o?.deliveryPaise ?? 0) / 100,
+  };
+  return totalsToPaise(billTotals(legacy, /** @type {any} */ ({ taxes: [], ...store.settings })));
+}
+
+/** Items of a menu group/sub-group in display order (active only). @param {string} groupId @param {string | null} [subId] */
+export const itemsOf = (groupId, subId) => list('items')
+  .filter((i) => i.active && i.groupId === groupId && (subId === undefined || (i.subgroupId ?? null) === subId))
+  .sort((a, b) => a.sort - b.sort || a.name.localeCompare(b.name));
+
+/** Display name of where an order is: table / PK1 / ZM2. @param {any} o */
+export const orderRef = (o) => o?.ref || (o?.type === 'dine' ? byId('dining_tables', o?.tableId)?.name ?? '' : `#${o?.no ?? ''}`);
+/** @param {any} o */
+export const typeLabel = (o) => (o?.type === 'dine' ? 'Dine In' : o?.type === 'takeaway' ? 'Pick Up' : 'Delivery' + (o?.platform ? ' - ' + o.platform : ''));

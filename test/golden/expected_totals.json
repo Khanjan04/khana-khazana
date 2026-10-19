@@ -1,1082 +1,1478 @@
 {
- "5000": {
-  "subtotal": 1305.98,
-  "discount": 0,
-  "taxable": 1305.98,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 32.65,
-  "sgst": 32.65,
-  "serviceCharge": 0,
-  "roundOff": -0.28,
-  "total": 1371
- },
- "5001": {
-  "subtotal": 763.5,
-  "discount": 0,
-  "taxable": 763.5,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 19.09,
-  "sgst": 19.09,
-  "serviceCharge": 0,
-  "roundOff": 0.32,
-  "total": 802
- },
- "5002": {
-  "subtotal": 606,
-  "discount": 0,
-  "taxable": 606,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 15.15,
-  "sgst": 15.15,
-  "serviceCharge": 0,
-  "roundOff": -0.3,
-  "total": 636
- },
- "5003": {
-  "subtotal": 559,
-  "discount": 0,
-  "taxable": 559,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 13.98,
-  "sgst": 13.98,
-  "serviceCharge": 0,
-  "roundOff": 0.04,
-  "total": 587
- },
- "5004": {
-  "subtotal": 1062.5,
-  "discount": 0,
-  "taxable": 1062.5,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 26.56,
-  "sgst": 26.56,
-  "serviceCharge": 0,
-  "roundOff": 0.38,
-  "total": 1116
- },
- "5005": {
-  "subtotal": 1793.5,
-  "discount": 0,
-  "taxable": 1793.5,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 44.84,
-  "sgst": 44.84,
-  "serviceCharge": 0,
-  "roundOff": -0.18,
-  "total": 1883
- },
- "5006": {
-  "subtotal": 199.99,
-  "discount": 10,
-  "taxable": 189.99,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 4.75,
-  "sgst": 4.75,
-  "serviceCharge": 0,
-  "roundOff": -0.49,
-  "total": 199
- },
- "5007": {
-  "subtotal": 758,
-  "discount": 0,
-  "taxable": 758,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 18.95,
-  "sgst": 18.95,
-  "serviceCharge": 0,
-  "roundOff": 0.1,
-  "total": 796
- },
- "5008": {
-  "subtotal": 1265,
-  "discount": 0,
-  "taxable": 1265,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 31.63,
-  "sgst": 31.63,
-  "serviceCharge": 0,
+ "b4wb5ptddxc": {
+  "sub": 1405,
+  "disc": 0,
+  "delivery": 40,
+  "taxable": 1445,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 36.13
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 36.13
+   }
+  ],
+  "taxTotal": 72.26,
   "roundOff": -0.26,
-  "total": 1328
+  "total": 1517
  },
- "5009": {
-  "subtotal": 1137.45,
-  "discount": 0,
-  "taxable": 1137.45,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 28.44,
-  "sgst": 28.44,
-  "serviceCharge": 0,
-  "roundOff": -0.33,
-  "total": 1194
- },
- "5010": {
-  "subtotal": 1589.97,
-  "discount": 0,
-  "taxable": 1589.97,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 39.75,
-  "sgst": 39.75,
-  "serviceCharge": 0,
-  "roundOff": -0.47,
-  "total": 1669
- },
- "5011": {
-  "subtotal": 1780.97,
-  "discount": 0,
-  "taxable": 1780.97,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 44.52,
-  "sgst": 44.52,
-  "serviceCharge": 89.05,
-  "roundOff": -0.06,
-  "total": 1959
- },
- "5012": {
-  "subtotal": 1038.49,
-  "discount": 155.77,
-  "taxable": 882.72,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 22.07,
-  "sgst": 22.07,
-  "serviceCharge": 0,
-  "roundOff": 0.14,
-  "total": 927
- },
- "5013": {
-  "subtotal": 644.97,
-  "discount": 0,
-  "taxable": 644.97,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 16.12,
-  "sgst": 16.12,
-  "serviceCharge": 0,
-  "roundOff": -0.21,
-  "total": 677
- },
- "5014": {
-  "subtotal": 910,
-  "discount": 0,
-  "taxable": 910,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 22.75,
-  "sgst": 22.75,
-  "serviceCharge": 0,
+ "bofmqdrmeao": {
+  "sub": 1030,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 1030,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 25.75
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 25.75
+   }
+  ],
+  "taxTotal": 51.5,
   "roundOff": 0.5,
-  "total": 956
+  "total": 1082
  },
- "5015": {
-  "subtotal": 425.5,
-  "discount": 0,
-  "taxable": 425.5,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 10.64,
-  "sgst": 10.64,
-  "serviceCharge": 21.28,
-  "roundOff": -0.06,
-  "total": 468
- },
- "5016": {
-  "subtotal": 199.99,
-  "discount": 20,
-  "taxable": 179.99,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 4.5,
-  "sgst": 4.5,
-  "serviceCharge": 0,
-  "roundOff": 0.01,
-  "total": 189
- },
- "5017": {
-  "subtotal": 754,
-  "discount": 0,
-  "taxable": 754,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 18.85,
-  "sgst": 18.85,
-  "serviceCharge": 0,
-  "roundOff": 0.3,
-  "total": 792
- },
- "5018": {
-  "subtotal": 45,
-  "discount": 0,
-  "taxable": 45,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 1.13,
-  "sgst": 1.13,
-  "serviceCharge": 0,
+ "bi62v346zc0": {
+  "sub": 525,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 525,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 13.13
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 13.13
+   }
+  ],
+  "taxTotal": 26.26,
   "roundOff": -0.26,
-  "total": 47
+  "total": 551
  },
- "5019": {
-  "subtotal": 396,
-  "discount": 0,
-  "taxable": 396,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 9.9,
-  "sgst": 9.9,
-  "serviceCharge": 0,
-  "roundOff": 0.2,
-  "total": 416
+ "bfczcpj351c": {
+  "sub": 150,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 150,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 3.75
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 3.75
+   }
+  ],
+  "taxTotal": 7.5,
+  "roundOff": 0.5,
+  "total": 158
  },
- "5020": {
-  "subtotal": 1302.75,
-  "discount": 0,
-  "taxable": 1302.75,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 32.57,
-  "sgst": 32.57,
-  "serviceCharge": 0,
-  "roundOff": 0.11,
-  "total": 1368
+ "bq66m7tc5eo": {
+  "sub": 2434.5,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 2434.5,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 60.86
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 60.86
+   }
+  ],
+  "taxTotal": 121.72,
+  "roundOff": -0.22,
+  "total": 2556
  },
- "5021": {
-  "subtotal": 834.96,
-  "discount": 0,
-  "taxable": 834.96,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 20.87,
-  "sgst": 20.87,
-  "serviceCharge": 0,
-  "roundOff": 0.3,
-  "total": 877
+ "bbj57mnilhc": {
+  "sub": 2247,
+  "disc": 0,
+  "delivery": 40,
+  "taxable": 2287,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 57.18
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 57.18
+   }
+  ],
+  "taxTotal": 114.36,
+  "roundOff": -0.36,
+  "total": 2401
  },
- "5022": {
-  "subtotal": 129,
-  "discount": 129,
-  "taxable": 0,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 0,
-  "sgst": 0,
-  "serviceCharge": 0,
-  "roundOff": 0,
-  "total": 0
- },
- "5023": {
-  "subtotal": 637.5,
-  "discount": 0,
-  "taxable": 637.5,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 15.94,
-  "sgst": 15.94,
-  "serviceCharge": 0,
-  "roundOff": -0.38,
-  "total": 669
- },
- "5024": {
-  "subtotal": 1098,
-  "discount": 0,
-  "taxable": 1098,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 27.45,
-  "sgst": 27.45,
-  "serviceCharge": 0,
-  "roundOff": 0.1,
-  "total": 1153
- },
- "5025": {
-  "subtotal": 279.5,
-  "discount": 100,
-  "taxable": 179.5,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 4.49,
-  "sgst": 4.49,
-  "serviceCharge": 0,
-  "roundOff": -0.48,
-  "total": 188
- },
- "5026": {
-  "subtotal": 748,
-  "discount": 0,
-  "taxable": 748,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 18.7,
-  "sgst": 18.7,
-  "serviceCharge": 0,
-  "roundOff": -0.4,
-  "total": 785
- },
- "5027": {
-  "subtotal": 1203,
-  "discount": 150.38,
-  "taxable": 1052.62,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 26.32,
-  "sgst": 26.32,
-  "serviceCharge": 0,
+ "b897u929m00": {
+  "sub": 1685,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 1685,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 42.13
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 42.13
+   }
+  ],
+  "taxTotal": 84.26,
   "roundOff": -0.26,
-  "total": 1105
+  "total": 1769
  },
- "5028": {
-  "subtotal": 138,
-  "discount": 0,
-  "taxable": 138,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 3.45,
-  "sgst": 3.45,
-  "serviceCharge": 0,
-  "roundOff": 0.1,
-  "total": 145
- },
- "5029": {
-  "subtotal": 2148,
-  "discount": 0,
-  "taxable": 2148,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 53.7,
-  "sgst": 53.7,
-  "serviceCharge": 107.4,
-  "roundOff": 0.2,
-  "total": 2363
- },
- "5030": {
-  "subtotal": 838.5,
-  "discount": 41.93,
-  "taxable": 796.57,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 19.91,
-  "sgst": 19.91,
-  "serviceCharge": 0,
-  "roundOff": -0.39,
-  "total": 836
- },
- "5031": {
-  "subtotal": 45,
-  "discount": 45,
-  "taxable": 0,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 0,
-  "sgst": 0,
-  "serviceCharge": 0,
+ "b5ay9ipl6yo": {
+  "sub": 660,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 660,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 16.5
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 16.5
+   }
+  ],
+  "taxTotal": 33,
   "roundOff": 0,
-  "total": 0
+  "total": 693
  },
- "5032": {
-  "subtotal": 329,
-  "discount": 0,
-  "taxable": 329,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 8.23,
-  "sgst": 8.23,
-  "serviceCharge": 0,
-  "roundOff": -0.46,
-  "total": 345
+ "b9jw4vl0neo": {
+  "sub": 210,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 210,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 5.25
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 5.25
+   }
+  ],
+  "taxTotal": 10.5,
+  "roundOff": 0.5,
+  "total": 221
  },
- "5033": {
-  "subtotal": 1033.97,
-  "discount": 0,
-  "taxable": 1033.97,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 25.85,
-  "sgst": 25.85,
-  "serviceCharge": 0,
-  "roundOff": 0.33,
-  "total": 1086
+ "bppz6iz8dhc": {
+  "sub": 750,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 750,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 18.75
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 18.75
+   }
+  ],
+  "taxTotal": 37.5,
+  "roundOff": 0.5,
+  "total": 788
  },
- "5034": {
-  "subtotal": 207,
-  "discount": 0,
-  "taxable": 207,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 5.18,
-  "sgst": 5.18,
-  "serviceCharge": 0,
-  "roundOff": -0.36,
-  "total": 217
- },
- "5035": {
-  "subtotal": 2123.5,
-  "discount": 0,
-  "taxable": 2123.5,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 53.09,
-  "sgst": 53.09,
-  "serviceCharge": 0,
-  "roundOff": 0.32,
-  "total": 2230
- },
- "5036": {
-  "subtotal": 1309.5,
-  "discount": 0,
-  "taxable": 1309.5,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 32.74,
-  "sgst": 32.74,
-  "serviceCharge": 0,
-  "roundOff": 0.02,
-  "total": 1375
- },
- "5037": {
-  "subtotal": 1180.47,
-  "discount": 0,
-  "taxable": 1180.47,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 29.51,
-  "sgst": 29.51,
-  "serviceCharge": 0,
-  "roundOff": -0.49,
-  "total": 1239
- },
- "5038": {
-  "subtotal": 996.47,
-  "discount": 0,
-  "taxable": 996.47,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 24.91,
-  "sgst": 24.91,
-  "serviceCharge": 0,
-  "roundOff": -0.29,
-  "total": 1046
- },
- "5039": {
-  "subtotal": 772,
-  "discount": 0,
-  "taxable": 772,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 19.3,
-  "sgst": 19.3,
-  "serviceCharge": 38.6,
-  "roundOff": -0.2,
-  "total": 849
- },
- "5040": {
-  "subtotal": 298,
-  "discount": 0,
-  "taxable": 298,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 7.45,
-  "sgst": 7.45,
-  "serviceCharge": 14.9,
-  "roundOff": 0.2,
-  "total": 328
- },
- "5041": {
-  "subtotal": 544.5,
-  "discount": 0,
-  "taxable": 544.5,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 13.61,
-  "sgst": 13.61,
-  "serviceCharge": 27.23,
-  "roundOff": 0.05,
-  "total": 599
- },
- "5042": {
-  "subtotal": 472,
-  "discount": 0,
-  "taxable": 472,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 11.8,
-  "sgst": 11.8,
-  "serviceCharge": 23.6,
-  "roundOff": -0.2,
-  "total": 519
- },
- "5043": {
-  "subtotal": 1472,
-  "discount": 0,
-  "taxable": 1472,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 36.8,
-  "sgst": 36.8,
-  "serviceCharge": 0,
-  "roundOff": 0.4,
-  "total": 1546
- },
- "5044": {
-  "subtotal": 264.75,
-  "discount": 0,
-  "taxable": 264.75,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 6.62,
-  "sgst": 6.62,
-  "serviceCharge": 0,
-  "roundOff": 0.01,
-  "total": 278
- },
- "5045": {
-  "subtotal": 612,
-  "discount": 0,
-  "taxable": 612,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 15.3,
-  "sgst": 15.3,
-  "serviceCharge": 0,
-  "roundOff": 0.4,
-  "total": 643
- },
- "5046": {
-  "subtotal": 406.99,
-  "discount": 406.99,
-  "taxable": 0,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 0,
-  "sgst": 0,
-  "serviceCharge": 0,
+ "bvxht8y38w0": {
+  "sub": 1000,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 1000,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 25
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 25
+   }
+  ],
+  "taxTotal": 50,
   "roundOff": 0,
-  "total": 0
+  "total": 1050
  },
- "5047": {
-  "subtotal": 858,
-  "discount": 128.7,
-  "taxable": 729.3,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 18.23,
-  "sgst": 18.23,
-  "serviceCharge": 0,
-  "roundOff": 0.24,
-  "total": 766
- },
- "5048": {
-  "subtotal": 249,
-  "discount": 0,
-  "taxable": 249,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 6.23,
-  "sgst": 6.23,
-  "serviceCharge": 12.45,
-  "roundOff": 0.09,
-  "total": 274
- },
- "5049": {
-  "subtotal": 747,
-  "discount": 112.05,
-  "taxable": 634.95,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 15.87,
-  "sgst": 15.87,
-  "serviceCharge": 0,
-  "roundOff": 0.31,
-  "total": 667
- },
- "5050": {
-  "subtotal": 1131.5,
-  "discount": 0,
-  "taxable": 1131.5,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 28.29,
-  "sgst": 28.29,
-  "serviceCharge": 0,
-  "roundOff": -0.08,
-  "total": 1188
- },
- "5051": {
-  "subtotal": 697,
-  "discount": 0,
-  "taxable": 697,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 17.43,
-  "sgst": 17.43,
-  "serviceCharge": 0,
-  "roundOff": 0.14,
-  "total": 732
- },
- "5052": {
-  "subtotal": 39,
-  "discount": 0,
-  "taxable": 39,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 0.98,
-  "sgst": 0.98,
-  "serviceCharge": 0,
-  "roundOff": 0.04,
-  "total": 41
- },
- "5053": {
-  "subtotal": 412.5,
-  "discount": 0,
-  "taxable": 412.5,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 10.31,
-  "sgst": 10.31,
-  "serviceCharge": 0,
-  "roundOff": -0.12,
-  "total": 433
- },
- "5054": {
-  "subtotal": 666,
-  "discount": 50,
-  "taxable": 616,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 15.4,
-  "sgst": 15.4,
-  "serviceCharge": 0,
-  "roundOff": 0.2,
-  "total": 647
- },
- "5055": {
-  "subtotal": 289.99,
-  "discount": 0,
-  "taxable": 289.99,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 7.25,
-  "sgst": 7.25,
-  "serviceCharge": 0,
-  "roundOff": -0.49,
-  "total": 304
- },
- "5056": {
-  "subtotal": 249,
-  "discount": 100,
-  "taxable": 149,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 3.73,
-  "sgst": 3.73,
-  "serviceCharge": 0,
-  "roundOff": -0.46,
-  "total": 156
- },
- "5057": {
-  "subtotal": 1296.49,
-  "discount": 33.33,
-  "taxable": 1263.16,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 31.58,
-  "sgst": 31.58,
-  "serviceCharge": 63.16,
-  "roundOff": -0.48,
-  "total": 1389
- },
- "5058": {
-  "subtotal": 387,
-  "discount": 0,
-  "taxable": 387,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 9.68,
-  "sgst": 9.68,
-  "serviceCharge": 0,
-  "roundOff": -0.36,
-  "total": 406
- },
- "5059": {
-  "subtotal": 561,
-  "discount": 42.08,
-  "taxable": 518.92,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 12.97,
-  "sgst": 12.97,
-  "serviceCharge": 0,
-  "roundOff": 0.14,
-  "total": 545
- },
- "5060": {
-  "subtotal": 581,
-  "discount": 0,
-  "taxable": 581,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 14.53,
-  "sgst": 14.53,
-  "serviceCharge": 0,
-  "roundOff": -0.06,
-  "total": 610
- },
- "5061": {
-  "subtotal": 192,
-  "discount": 0,
-  "taxable": 192,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 4.8,
-  "sgst": 4.8,
-  "serviceCharge": 0,
-  "roundOff": 0.4,
-  "total": 202
- },
- "5062": {
-  "subtotal": 982,
-  "discount": 0,
-  "taxable": 982,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 24.55,
-  "sgst": 24.55,
-  "serviceCharge": 0,
-  "roundOff": -0.1,
-  "total": 1031
- },
- "5063": {
-  "subtotal": 433.5,
-  "discount": 0,
-  "taxable": 433.5,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 10.84,
-  "sgst": 10.84,
-  "serviceCharge": 0,
-  "roundOff": -0.18,
-  "total": 455
- },
- "5064": {
-  "subtotal": 69,
-  "discount": 0,
-  "taxable": 69,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 1.73,
-  "sgst": 1.73,
-  "serviceCharge": 0,
-  "roundOff": -0.46,
-  "total": 72
- },
- "5065": {
-  "subtotal": 1254.99,
-  "discount": 0,
-  "taxable": 1254.99,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 31.37,
-  "sgst": 31.37,
-  "serviceCharge": 0,
-  "roundOff": 0.27,
-  "total": 1318
- },
- "5066": {
-  "subtotal": 604,
-  "discount": 0,
+ "bd4p9etsz40": {
+  "sub": 604,
+  "disc": 0,
+  "delivery": 0,
   "taxable": 604,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 15.1,
-  "sgst": 15.1,
-  "serviceCharge": 0,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 15.1
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 15.1
+   }
+  ],
+  "taxTotal": 30.2,
   "roundOff": -0.2,
   "total": 634
  },
- "5067": {
-  "subtotal": 1544.45,
-  "discount": 0,
-  "taxable": 1544.45,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 38.61,
-  "sgst": 38.61,
-  "serviceCharge": 0,
-  "roundOff": 0.33,
-  "total": 1622
+ "bk9q7gp9p9c": {
+  "sub": 120,
+  "disc": 0,
+  "delivery": 40,
+  "taxable": 160,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 4
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 4
+   }
+  ],
+  "taxTotal": 8,
+  "roundOff": 0,
+  "total": 168
  },
- "5068": {
-  "subtotal": 67.5,
-  "discount": 0,
-  "taxable": 67.5,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 1.69,
-  "sgst": 1.69,
-  "serviceCharge": 0,
-  "roundOff": 0.12,
-  "total": 71
+ "blayxwhg5c0": {
+  "sub": 330,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 330,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 8.25
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 8.25
+   }
+  ],
+  "taxTotal": 16.5,
+  "roundOff": 0.5,
+  "total": 347
  },
- "5069": {
-  "subtotal": 1234.5,
-  "discount": 0,
-  "taxable": 1234.5,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 30.86,
-  "sgst": 30.86,
-  "serviceCharge": 0,
+ "bsxia79mleo": {
+  "sub": 1230,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 1230,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 30.75
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 30.75
+   }
+  ],
+  "taxTotal": 61.5,
+  "roundOff": 0.5,
+  "total": 1292
+ },
+ "bdutkcalbpc": {
+  "sub": 640,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 640,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 16
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 16
+   }
+  ],
+  "taxTotal": 32,
+  "roundOff": 0,
+  "total": 672
+ },
+ "boooeelhheo": {
+  "sub": 1335,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 1335,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 33.38
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 33.38
+   }
+  ],
+  "taxTotal": 66.76,
+  "roundOff": 0.24,
+  "total": 1402
+ },
+ "bl17jmu3d1c": {
+  "sub": 300,
+  "disc": 15,
+  "delivery": 49.5,
+  "taxable": 334.5,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 8.36
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 8.36
+   }
+  ],
+  "taxTotal": 16.72,
   "roundOff": -0.22,
-  "total": 1296
+  "total": 351
  },
- "5070": {
-  "subtotal": 276,
-  "discount": 0,
-  "taxable": 276,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 6.9,
-  "sgst": 6.9,
-  "serviceCharge": 0,
-  "roundOff": 0.2,
-  "total": 290
- },
- "5071": {
-  "subtotal": 186,
-  "discount": 0,
-  "taxable": 186,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 4.65,
-  "sgst": 4.65,
-  "serviceCharge": 0,
-  "roundOff": -0.3,
-  "total": 195
- },
- "5072": {
-  "subtotal": 69,
-  "discount": 0,
-  "taxable": 69,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 1.73,
-  "sgst": 1.73,
-  "serviceCharge": 0,
-  "roundOff": -0.46,
-  "total": 72
- },
- "5073": {
-  "subtotal": 387,
-  "discount": 0,
-  "taxable": 387,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 9.68,
-  "sgst": 9.68,
-  "serviceCharge": 0,
-  "roundOff": -0.36,
-  "total": 406
- },
- "5074": {
-  "subtotal": 1037.97,
-  "discount": 0,
-  "taxable": 1037.97,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 25.95,
-  "sgst": 25.95,
-  "serviceCharge": 0,
-  "roundOff": 0.13,
-  "total": 1090
- },
- "5075": {
-  "subtotal": 0,
-  "discount": 0,
-  "taxable": 0,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 0,
-  "sgst": 0,
-  "serviceCharge": 0,
+ "bfku0zjwy5c": {
+  "sub": 600,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 600,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 15
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 15
+   }
+  ],
+  "taxTotal": 30,
   "roundOff": 0,
-  "total": 0
+  "total": 630
  },
- "5076": {
-  "subtotal": 292.5,
-  "discount": 292.5,
-  "taxable": 0,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 0,
-  "sgst": 0,
-  "serviceCharge": 0,
-  "roundOff": 0,
-  "total": 0
+ "b0ty8kwp8yo": {
+  "sub": 828,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 828,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 20.7
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 20.7
+   }
+  ],
+  "taxTotal": 41.4,
+  "roundOff": -0.4,
+  "total": 869
  },
- "5077": {
-  "subtotal": 160.5,
-  "discount": 0,
-  "taxable": 160.5,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 4.01,
-  "sgst": 4.01,
-  "serviceCharge": 0,
-  "roundOff": 0.48,
-  "total": 169
+ "b6pu2apmpk0": {
+  "sub": 2158,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 2158,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 53.95
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 53.95
+   }
+  ],
+  "taxTotal": 107.9,
+  "roundOff": 0.1,
+  "total": 2266
  },
- "5078": {
-  "subtotal": 996,
-  "discount": 0,
-  "taxable": 996,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 24.9,
-  "sgst": 24.9,
-  "serviceCharge": 0,
-  "roundOff": 0.2,
-  "total": 1046
+ "bs0xvg4vq80": {
+  "sub": 1250,
+  "disc": 0,
+  "delivery": 49.5,
+  "taxable": 1299.5,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 32.49
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 32.49
+   }
+  ],
+  "taxTotal": 64.98,
+  "roundOff": -0.48,
+  "total": 1364
  },
- "5079": {
-  "subtotal": 1539,
-  "discount": 0,
-  "taxable": 1539,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 38.48,
-  "sgst": 38.48,
-  "serviceCharge": 0,
-  "roundOff": 0.04,
-  "total": 1616
- },
- "5080": {
-  "subtotal": 1644,
-  "discount": 0,
-  "taxable": 1644,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 41.1,
-  "sgst": 41.1,
-  "serviceCharge": 0,
-  "roundOff": -0.2,
-  "total": 1726
- },
- "5081": {
-  "subtotal": 1474,
-  "discount": 0,
-  "taxable": 1474,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 36.85,
-  "sgst": 36.85,
-  "serviceCharge": 0,
-  "roundOff": 0.3,
-  "total": 1548
- },
- "5082": {
-  "subtotal": 279.5,
-  "discount": 279.5,
-  "taxable": 0,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 0,
-  "sgst": 0,
-  "serviceCharge": 0,
-  "roundOff": 0,
-  "total": 0
- },
- "5083": {
-  "subtotal": 756.5,
-  "discount": 0,
-  "taxable": 756.5,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 18.91,
-  "sgst": 18.91,
-  "serviceCharge": 0,
-  "roundOff": -0.32,
-  "total": 794
- },
- "5084": {
-  "subtotal": 45,
-  "discount": 0,
-  "taxable": 45,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 1.13,
-  "sgst": 1.13,
-  "serviceCharge": 0,
+ "blotbje9w2o": {
+  "sub": 225,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 225,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 5.63
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 5.63
+   }
+  ],
+  "taxTotal": 11.26,
   "roundOff": -0.26,
-  "total": 47
+  "total": 236
  },
- "5085": {
-  "subtotal": 1720.97,
-  "discount": 0,
-  "taxable": 1720.97,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 43.02,
-  "sgst": 43.02,
-  "serviceCharge": 0,
-  "roundOff": -0.01,
-  "total": 1807
+ "b4ghnzss7s0": {
+  "sub": 775,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 775,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 19.38
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 19.38
+   }
+  ],
+  "taxTotal": 38.76,
+  "roundOff": 0.24,
+  "total": 814
  },
- "5086": {
-  "subtotal": 289,
-  "discount": 0,
-  "taxable": 289,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 7.23,
-  "sgst": 7.23,
-  "serviceCharge": 0,
-  "roundOff": -0.46,
-  "total": 303
+ "bf6513vbiio": {
+  "sub": 1055,
+  "disc": 0,
+  "delivery": 30,
+  "taxable": 1085,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 27.13
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 27.13
+   }
+  ],
+  "taxTotal": 54.26,
+  "roundOff": -0.26,
+  "total": 1139
  },
- "5087": {
-  "subtotal": 833,
-  "discount": 50,
-  "taxable": 783,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 19.58,
-  "sgst": 19.58,
-  "serviceCharge": 0,
-  "roundOff": -0.16,
-  "total": 822
+ "byp8a8gods0": {
+  "sub": 105,
+  "disc": 50,
+  "delivery": 0,
+  "taxable": 55,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 1.38
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 1.38
+   }
+  ],
+  "taxTotal": 2.76,
+  "roundOff": 0.24,
+  "total": 58
  },
- "5088": {
-  "subtotal": 39,
-  "discount": 0,
-  "taxable": 39,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 0.98,
-  "sgst": 0.98,
-  "serviceCharge": 0,
-  "roundOff": 0.04,
-  "total": 41
+ "bj4e8aozyqo": {
+  "sub": 210,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 210,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 5.25
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 5.25
+   }
+  ],
+  "taxTotal": 10.5,
+  "roundOff": 0.5,
+  "total": 221
  },
- "5089": {
-  "subtotal": 1574.45,
-  "discount": 1574.45,
+ "b9wovdvhz6o": {
+  "sub": 2155,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 2155,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 53.88
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 53.88
+   }
+  ],
+  "taxTotal": 107.76,
+  "roundOff": 0.24,
+  "total": 2263
+ },
+ "bwo9ylhuug0": {
+  "sub": 2950,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 2950,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 73.75
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 73.75
+   }
+  ],
+  "taxTotal": 147.5,
+  "roundOff": 0.5,
+  "total": 3098
+ },
+ "bhtoalr3v40": {
+  "sub": 1778,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 1778,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 44.45
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 44.45
+   }
+  ],
+  "taxTotal": 88.9,
+  "roundOff": 0.1,
+  "total": 1867
+ },
+ "buclxwc6gao": {
+  "sub": 1375.5,
+  "disc": 33.33,
+  "delivery": 0,
+  "taxable": 1342.17,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 33.55
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 33.55
+   }
+  ],
+  "taxTotal": 67.1,
+  "roundOff": -0.27,
+  "total": 1409
+ },
+ "buha2bo01eo": {
+  "sub": 0,
+  "disc": 0,
+  "delivery": 0,
   "taxable": 0,
-  "cgstRate": 2.5,
-  "sgstRate": 2.5,
-  "cgst": 0,
-  "sgst": 0,
-  "serviceCharge": 0,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 0
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 0
+   }
+  ],
+  "taxTotal": 0,
   "roundOff": 0,
-  "total": 0
+  "total": 0,
+  "comp": true,
+  "compValue": 875
+ },
+ "b6jb6yli1uo": {
+  "sub": 650,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 650,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 16.25
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 16.25
+   }
+  ],
+  "taxTotal": 32.5,
+  "roundOff": 0.5,
+  "total": 683
+ },
+ "bgwqb1rw7eo": {
+  "sub": 2405,
+  "disc": 0,
+  "delivery": 40,
+  "taxable": 2445,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 61.13
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 61.13
+   }
+  ],
+  "taxTotal": 122.26,
+  "roundOff": -0.26,
+  "total": 2567
+ },
+ "ba97whyacyo": {
+  "sub": 1430,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 1430,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 35.75
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 35.75
+   }
+  ],
+  "taxTotal": 71.5,
+  "roundOff": 0.5,
+  "total": 1502
+ },
+ "bvvv7o4jdc0": {
+  "sub": 1185.5,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 1185.5,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 29.64
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 29.64
+   }
+  ],
+  "taxTotal": 59.28,
+  "roundOff": 0.22,
+  "total": 1245
+ },
+ "bznm9aulyio": {
+  "sub": 735,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 735,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 18.38
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 18.38
+   }
+  ],
+  "taxTotal": 36.76,
+  "roundOff": 0.24,
+  "total": 772
+ },
+ "bgffrbk2oyo": {
+  "sub": 0,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 0,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 0
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 0
+   }
+  ],
+  "taxTotal": 0,
+  "roundOff": 0,
+  "total": 0,
+  "comp": true,
+  "compValue": 1949
+ },
+ "b4hn9qewa2o": {
+  "sub": 3210.5,
+  "disc": 0,
+  "delivery": 40,
+  "taxable": 3250.5,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 81.26
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 81.26
+   }
+  ],
+  "taxTotal": 162.52,
+  "roundOff": -0.02,
+  "total": 3413
+ },
+ "bpx7ureokw0": {
+  "sub": 3629,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 3629,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 90.73
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 90.73
+   }
+  ],
+  "taxTotal": 181.46,
+  "roundOff": -0.46,
+  "total": 3810
+ },
+ "byjvfszkqlc": {
+  "sub": 1070,
+  "disc": 80.25,
+  "delivery": 0,
+  "taxable": 989.75,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 24.74
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 24.74
+   }
+  ],
+  "taxTotal": 49.48,
+  "roundOff": -0.23,
+  "total": 1039
+ },
+ "b3cgxp041mo": {
+  "sub": 1740,
+  "disc": 130.5,
+  "delivery": 40,
+  "taxable": 1649.5,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 41.24
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 41.24
+   }
+  ],
+  "taxTotal": 82.48,
+  "roundOff": 0.02,
+  "total": 1732
+ },
+ "bgg4zcfv25c": {
+  "sub": 2370,
+  "disc": 0,
+  "delivery": 30,
+  "taxable": 2400,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 60
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 60
+   }
+  ],
+  "taxTotal": 120,
+  "roundOff": 0,
+  "total": 2520
+ },
+ "bno1guoyy80": {
+  "sub": 360,
+  "disc": 50,
+  "delivery": 0,
+  "taxable": 310,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 7.75
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 7.75
+   }
+  ],
+  "taxTotal": 15.5,
+  "roundOff": 0.5,
+  "total": 326
+ },
+ "bwt3cabsjc0": {
+  "sub": 2789.5,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 2789.5,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 69.74
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 69.74
+   }
+  ],
+  "taxTotal": 139.48,
+  "roundOff": 0.02,
+  "total": 2929
+ },
+ "bhd8f2lbu2o": {
+  "sub": 750,
+  "disc": 75,
+  "delivery": 0,
+  "taxable": 675,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 16.88
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 16.88
+   }
+  ],
+  "taxTotal": 33.76,
+  "roundOff": 0.24,
+  "total": 709
+ },
+ "bn38gafia5c": {
+  "sub": 650,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 650,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 16.25
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 16.25
+   }
+  ],
+  "taxTotal": 32.5,
+  "roundOff": 0.5,
+  "total": 683
+ },
+ "bsyokx30luo": {
+  "sub": 1244,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 1244,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 31.1
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 31.1
+   }
+  ],
+  "taxTotal": 62.2,
+  "roundOff": -0.2,
+  "total": 1306
+ },
+ "b4c1njo9m80": {
+  "sub": 120,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 120,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 3
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 3
+   }
+  ],
+  "taxTotal": 6,
+  "roundOff": 0,
+  "total": 126
+ },
+ "bbxckfw4hmo": {
+  "sub": 0,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 0,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 0
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 0
+   }
+  ],
+  "taxTotal": 0,
+  "roundOff": 0,
+  "total": 0,
+  "comp": true,
+  "compValue": 1533
+ },
+ "bvbuo9972tc": {
+  "sub": 565,
+  "disc": 0,
+  "delivery": 40,
+  "taxable": 605,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 15.13
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 15.13
+   }
+  ],
+  "taxTotal": 30.26,
+  "roundOff": -0.26,
+  "total": 635
+ },
+ "bn66ejhl8o0": {
+  "sub": 2054,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 2054,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 51.35
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 51.35
+   }
+  ],
+  "taxTotal": 102.7,
+  "roundOff": 0.3,
+  "total": 2157
+ },
+ "b8yep9unuqo": {
+  "sub": 659,
+  "disc": 82.38,
+  "delivery": 40,
+  "taxable": 616.62,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 15.42
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 15.42
+   }
+  ],
+  "taxTotal": 30.84,
+  "roundOff": -0.46,
+  "total": 647
+ },
+ "boe0rtu3aw0": {
+  "sub": 2190,
+  "disc": 50,
+  "delivery": 0,
+  "taxable": 2140,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 53.5
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 53.5
+   }
+  ],
+  "taxTotal": 107,
+  "roundOff": 0,
+  "total": 2247
+ },
+ "bw1gt97k11c": {
+  "sub": 450,
+  "disc": 33.33,
+  "delivery": 0,
+  "taxable": 416.67,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 10.42
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 10.42
+   }
+  ],
+  "taxTotal": 20.84,
+  "roundOff": 0.49,
+  "total": 438
+ },
+ "bnf73xbnwio": {
+  "sub": 2828,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 2828,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 70.7
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 70.7
+   }
+  ],
+  "taxTotal": 141.4,
+  "roundOff": -0.4,
+  "total": 2969
+ },
+ "bzlt4gflcio": {
+  "sub": 1355,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 1355,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 33.88
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 33.88
+   }
+  ],
+  "taxTotal": 67.76,
+  "roundOff": 0.24,
+  "total": 1423
+ },
+ "b7xh7caqiao": {
+  "sub": 2935,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 2935,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 73.38
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 73.38
+   }
+  ],
+  "taxTotal": 146.76,
+  "roundOff": 0.24,
+  "total": 3082
+ },
+ "b7f7r8nb3c0": {
+  "sub": 290,
+  "disc": 58,
+  "delivery": 0,
+  "taxable": 232,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 5.8
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 5.8
+   }
+  ],
+  "taxTotal": 11.6,
+  "roundOff": 0.4,
+  "total": 244
+ },
+ "bcd9eunp8w0": {
+  "sub": 50,
+  "disc": 0,
+  "delivery": 40,
+  "taxable": 90,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 2.25
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 2.25
+   }
+  ],
+  "taxTotal": 4.5,
+  "roundOff": 0.5,
+  "total": 95
+ },
+ "bgm825279mo": {
+  "sub": 1750,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 1750,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 43.75
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 43.75
+   }
+  ],
+  "taxTotal": 87.5,
+  "roundOff": 0.5,
+  "total": 1838
+ },
+ "bor1qgx5zxc": {
+  "sub": 405,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 405,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 10.13
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 10.13
+   }
+  ],
+  "taxTotal": 20.26,
+  "roundOff": -0.26,
+  "total": 425
+ },
+ "bf9ql62o0dc": {
+  "sub": 150,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 150,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 3.75
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 3.75
+   }
+  ],
+  "taxTotal": 7.5,
+  "roundOff": 0.5,
+  "total": 158
+ },
+ "bm8q5g0qlk0": {
+  "sub": 4507,
+  "disc": 901.4,
+  "delivery": 0,
+  "taxable": 3605.6,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 90.14
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 90.14
+   }
+  ],
+  "taxTotal": 180.28,
+  "roundOff": 0.12,
+  "total": 3786
+ },
+ "be8r2pczm80": {
+  "sub": 1575.5,
+  "disc": 99.99,
+  "delivery": 0,
+  "taxable": 1475.51,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 36.89
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 36.89
+   }
+  ],
+  "taxTotal": 73.78,
+  "roundOff": -0.29,
+  "total": 1549
+ },
+ "bv9ma5db76o": {
+  "sub": 3462,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 3462,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 86.55
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 86.55
+   }
+  ],
+  "taxTotal": 173.1,
+  "roundOff": -0.1,
+  "total": 3635
+ },
+ "baqnjdsvs80": {
+  "sub": 1295,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 1295,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 32.38
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 32.38
+   }
+  ],
+  "taxTotal": 64.76,
+  "roundOff": 0.24,
+  "total": 1360
+ },
+ "open:orrcjz57cw0": {
+  "sub": 1150,
+  "disc": 0,
+  "delivery": 40,
+  "taxable": 1190,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 29.75
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 29.75
+   }
+  ],
+  "taxTotal": 59.5,
+  "roundOff": 0.5,
+  "total": 1250
+ },
+ "open:oq625u3ixk0": {
+  "sub": 1818,
+  "disc": 50,
+  "delivery": 0,
+  "taxable": 1768,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 44.2
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 44.2
+   }
+  ],
+  "taxTotal": 88.4,
+  "roundOff": -0.4,
+  "total": 1856
+ },
+ "open:o8kdmkdui80": {
+  "sub": 470,
+  "disc": 0,
+  "delivery": 0,
+  "taxable": 470,
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5,
+    "amount": 11.75
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5,
+    "amount": 11.75
+   }
+  ],
+  "taxTotal": 23.5,
+  "roundOff": 0.5,
+  "total": 494
  }
 }

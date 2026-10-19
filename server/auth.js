@@ -5,6 +5,7 @@ import { get, all, run, tx } from './db.js';
 import { CmdError, need } from './errors.js';
 import { loadRights, can, seedRoles } from './rights.js';
 import { newId, putSetting, getPrivate } from './model.js';
+import { seedStaff, seedLegacyDefaults } from './seed/index.js';
 
 export const PAIR_TTL_MS = 5 * 60_000;
 export const PAIR_MAX_ATTEMPTS = 5;
@@ -62,10 +63,12 @@ function userCtx(db, u) {
 export const needsSetup = (db) => !get(db, 'SELECT id FROM users LIMIT 1');
 
 /**
- * Create the owner, pair the host browser and log it in.
- * @param {any} db @param {{ownerName: string, pin: string, restaurantName?: string}} p @param {number} now
+ * Create the owner, pair the host browser and log it in. Also creates the default staff logins
+ * (Manager, Captain, Kitchen) and, if asked, loads the father's menu / tables / extras / notes.
+ * @param {any} db @param {{ownerName: string, pin: string, restaurantName?: string, loadDefaults?: boolean}} p @param {number} now
+ * @param {{imagesDir?: string}} [o]
  */
-export function setup(db, p, now) {
+export function setup(db, p, now, o = {}) {
   need(needsSetup(db), 'ALREADY_SETUP');
   need(typeof p.ownerName === 'string' && p.ownerName.trim(), 'BAD_PAYLOAD', 'ownerName required');
   need(validPin(p.pin), 'BAD_PIN', 'PIN must be 4–8 digits');
@@ -74,12 +77,14 @@ export function setup(db, p, now) {
     const userId = newId();
     const { hash, salt } = hashPin(p.pin);
     run(db, 'INSERT INTO users(id,name,role_id,pin_hash,pin_salt,created_at) VALUES (?,?,?,?,?,?)', userId, p.ownerName.trim(), 'owner', hash, salt, now);
+    const staff = seedStaff(db, now);
+    const seeded = p.loadDefaults ? seedLegacyDefaults(db, { imagesDir: o.imagesDir }) : null;
     if (p.restaurantName) putSetting(db, 'name', String(p.restaurantName).slice(0, 80));
     const recoveryCode = randomBytes(9).toString('base64url').toUpperCase();
     putSetting(db, '_recovery', sha256(recoveryCode));
     const dev = addDevice(db, 'Host phone', 'host', now);
     const ses = createSession(db, userId, dev.deviceId, now);
-    return { ...dev, ...ses, userId, recoveryCode };
+    return { ...dev, ...ses, userId, recoveryCode, staff, seeded };
   });
 }
 

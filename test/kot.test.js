@@ -19,14 +19,19 @@ test('kot.create auto-opens an order for the table and reuses it', () => {
   assert.equal(o.status, 'open');
 });
 
-test('host prices lines: variant replaces price, extras add', () => {
+test('host prices lines: variant replaces price, shared extras with their own qty, notes joined', () => {
   const t = setup();
   const m = seedMenu(t);
-  const r = t.cmd('captain', 'kot.create', { tableId: m.tables[0], lines: [{ itemId: m.items.tikka, qty: 2, variant: 'Half', extras: ['Cheese'], note: 'less spicy', pricePaise: 1 }] });
+  const r = t.cmd('captain', 'kot.create', { tableId: m.tables[0], lines: [{ itemId: m.items.tikka, qty: 2, variant: 'Half', sides: [{ id: m.sides.cheese, qty: 3 }], notes: ['Jain', 'Less Spicy'], note: 'no onion', pricePaise: 1 }] });
   const l = get(t.db, 'SELECT * FROM order_lines WHERE order_id=?', r.orderId);
   assert.equal(l.unit_paise, 14900);
-  assert.deepEqual(JSON.parse(l.extras), [{ name: 'Cheese', pricePaise: 4000 }]);
-  assert.equal(l.note, 'less spicy');
+  assert.deepEqual(JSON.parse(l.extras), [{ id: m.sides.cheese, name: 'Cheese', pricePaise: 4000, qty: 3 }]);
+  assert.equal(l.note, 'Jain, Less Spicy, no onion');
+  // dish with variations needs one; extras only where allowed; "not available today" is refused
+  t.code('VARIANT_REQUIRED', () => t.cmd('captain', 'kot.create', { tableId: m.tables[1], lines: [{ itemId: m.items.tikka, qty: 1 }] }));
+  t.code('BAD_PAYLOAD', () => t.cmd('captain', 'kot.create', { tableId: m.tables[1], lines: [{ itemId: m.items.dal, qty: 1, sides: [{ id: m.sides.cheese, qty: 1 }] }] }));
+  t.cmd('manager', 'menu.item.available', { id: m.items.naan, available: false });
+  t.code('NOT_AVAILABLE', () => t.cmd('captain', 'kot.create', { tableId: m.tables[1], lines: [{ itemId: m.items.naan, qty: 1 }] }));
 });
 
 test('lines split into one KOT per kitchen station', () => {

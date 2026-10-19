@@ -3,7 +3,7 @@
 import { all, get } from './db.js';
 import { readEntity, getSettings, businessDate, ENTITIES } from './model.js';
 
-const STATIC = ['sections', 'dining_tables', 'menu_groups', 'menu_subgroups', 'items', 'kitchen_notes', 'users', 'roles', 'devices', 'customers'];
+const STATIC = ['sections', 'dining_tables', 'menu_groups', 'menu_subgroups', 'items', 'sides', 'kitchen_notes', 'users', 'roles', 'devices', 'customers'];
 
 /** @param {any} db @param {{epoch: string, now?: number}} o */
 export function buildSnapshot(db, o) {

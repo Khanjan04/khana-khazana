@@ -65,8 +65,8 @@ export function validateBackup(file) {
 
 const SECRET_COLS = new Set(['pin_hash', 'pin_salt', 'token_hash']);
 const EXPORT_TABLES = ['settings', 'counters', 'roles', 'role_rights', 'users', 'devices', 'sections', 'dining_tables',
-  'menu_groups', 'menu_subgroups', 'items', 'variants', 'extras', 'kitchen_notes', 'customers', 'orders', 'order_lines',
-  'kots', 'kot_status_log', 'bills', 'bill_payments', 'due_receipts', 'void_log', 'day_close'];
+  'menu_groups', 'menu_subgroups', 'items', 'variants', 'sides', 'kitchen_notes', 'customers', 'orders', 'order_lines',
+  'kots', 'kot_status_log', 'bills', 'bill_payments', 'due_receipts', 'void_log', 'day_close', 'cash_counts'];
 
 /** Owner JSON export (no secrets). @param {any} db */
 export function exportJson(db) {

@@ -45,13 +45,22 @@ function migrate(db) {
   db.exec('CREATE TABLE IF NOT EXISTS schema_version(v INTEGER NOT NULL)');
   const cur = db.prepare('SELECT MAX(v) AS v FROM schema_version').get()?.v ?? 0;
   const dir = new URL('./migrations/', import.meta.url);
-  for (const f of readdirSync(dir).filter((n) => n.endsWith('.sql')).sort()) {
-    const v = parseInt(f, 10);
-    if (!(v > cur)) continue;
-    tx(db, () => {
-      db.exec(readFileSync(new URL(f, dir), 'utf8'));
-      db.prepare('INSERT INTO schema_version(v) VALUES (?)').run(v);
-    });
+  // FKs off while migrating so a migration may rebuild a table (SQLite's 12-step ALTER);
+  // foreign_key_check afterwards proves nothing was orphaned.
+  db.exec('PRAGMA foreign_keys=OFF');
+  try {
+    for (const f of readdirSync(dir).filter((n) => n.endsWith('.sql')).sort()) {
+      const v = parseInt(f, 10);
+      if (!(v > cur)) continue;
+      tx(db, () => {
+        db.exec(readFileSync(new URL(f, dir), 'utf8'));
+        const bad = db.prepare('PRAGMA foreign_key_check').all();
+        if (bad.length) throw new Error(`migration ${f} broke foreign keys: ${JSON.stringify(bad.slice(0, 3))}`);
+        db.prepare('INSERT INTO schema_version(v) VALUES (?)').run(v);
+      });
+    }
+  } finally {
+    db.exec('PRAGMA foreign_keys=ON');
   }
 }
 

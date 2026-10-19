@@ -5,7 +5,7 @@
 // static hardening; restore.
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, rmSync } from 'node:fs';
+import { mkdtempSync, rmSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { randomUUID } from 'node:crypto';
@@ -108,9 +108,12 @@ test('first-run setup from loopback, then login flow', async () => {
   owner = { deviceToken: r.json.deviceToken, sessionToken: r.json.sessionToken };
   assert.equal((await http('/api/setup', { body: { ownerName: 'X', pin: '1234' } })).json.error.code, 'ALREADY_SETUP');
   const users = (await http('/api/users', { headers: hdr(owner) })).json.users;
-  assert.equal(users[0].name, 'Papa');
+  // only the Owner registers; Manager, Captain and Kitchen logins are created by default
+  assert.deepEqual(users.map((/** @type {any} */ u) => `${u.name}:${u.roleId}`).sort(), ['Captain:captain', 'Kitchen:kitchen', 'Manager:manager', 'Papa:owner']);
+  const cap = users.find((/** @type {any} */ u) => u.name === 'Captain');
+  assert.ok((await http('/api/login', { body: { userId: cap.id, pin: '1111' }, headers: hdr(owner) })).json.sessionToken);
   assert.equal((await http('/api/users')).status, 401);
-  const bad = await http('/api/login', { body: { userId: users[0].id, pin: '0000' }, headers: hdr(owner) });
+  const bad = await http('/api/login', { body: { userId: users.find((/** @type {any} */ u) => u.name === 'Papa').id, pin: '0000' }, headers: hdr(owner) });
   assert.equal(bad.json.error.code, 'BAD_LOGIN');
 });
 
@@ -200,7 +203,7 @@ test('kill server mid-send -> restart -> outbox replay: no lost or duplicate KOT
 
 test('revoked device is disconnected in < 1 s and cannot reconnect', async () => {
   const usersRes = (await http('/api/users', { headers: hdr(owner) })).json.users;
-  const ownerId = usersRes[0].id;
+  const ownerId = usersRes.find((/** @type {any} */ u) => u.roleId === 'owner').id;
   const phone = await newPhone(ownerId, '1234');
   const c = new Client(phone);
   await c.ready;
@@ -251,4 +254,16 @@ test('backup + restore over HTTP: data reverts, clients told to resync (4010)', 
   assert.ok(groups.includes('Before backup') && !groups.includes('After backup'));
   assert.ok(groups.length >= 2 && g);
   b.close();
+});
+
+test('HTTP import from the old billing app: settings right, every bill copied, phones resync', async () => {
+  const raw = readFileSync(new URL('./golden/backup_v13.json', import.meta.url));
+  const post = (/** @type {Record<string, string>} */ h) => fetch(base + '/api/import/legacy', { method: 'POST', headers: { 'content-type': 'application/json', ...h }, body: raw });
+  assert.equal((await post({})).status, 401);
+  const r = await post(hdr(owner));
+  const j = await r.json();
+  assert.equal(r.status, 200, JSON.stringify(j));
+  assert.equal(j.imported.bills, 77);
+  assert.equal(j.equal, true);
+  assert.equal((await (await post(hdr(owner))).json()).skipped, true); // same file twice: no duplicates
 });

@@ -14,12 +14,14 @@ import { getSettings, getPrivate, putSetting, businessDate, readEntity } from '.
 import { CmdError } from './errors.js';
 import { buildSnapshot } from './snapshot.js';
 import { lanIps, isAllowedSource, isLoopback } from './ip.js';
-import { dayTally, history, billsCsv } from './reports.js';
+import { dayTally, report, history, billsCsv } from './reports.js';
 import { backupNow, listBackups, backupPath, validateBackup, exportJson } from './backup.js';
 import { PrintQueue } from './print/lan.js';
 import { renderKot, renderBill, renderTest } from './print/render.js';
 import { colsFor } from './print/escpos.js';
 import { qrTerminal } from '../web/vendor/qr.js';
+import { importBuffer } from './import/v13.js';
+import { topUpStaff } from './seed/index.js';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
 const VERSION = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')).version;
@@ -31,6 +33,7 @@ const MIME = /** @type {Record<string, string>} */ ({
   '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.ico': 'image/x-icon', '.wav': 'audio/wav',
 });
 const SPA = new Set(['/', '/join', '/pair', '/whoami', '/setup', '/login']);
+const SHARED = new Set(['/server/domain/totals.js', '/server/domain/codes.js']);
 const CSP_BASE = "default-src 'self'; img-src 'self' data: blob:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'";
 
 class HttpError extends Error {
@@ -72,7 +75,14 @@ export async function startServer(opts = {}) {
     state.db = openDb(dbPath);
     tx(state.db, () => {
       seedRoles(state.db);
-      if (!getPrivate(state.db, '_epoch')) putSetting(state.db, '_epoch', randomBytes(8).toString('hex'));
+      // new epoch on first boot and after a schema upgrade: phones drop their cached replica and take a fresh snapshot
+      const schema = get(state.db, 'SELECT MAX(v) AS v FROM schema_version').v;
+      if (!getPrivate(state.db, '_epoch') || getPrivate(state.db, '_schema') !== schema) {
+        putSetting(state.db, '_epoch', randomBytes(8).toString('hex'));
+        putSetting(state.db, '_schema', schema);
+      }
+      const added = topUpStaff(state.db, now());
+      if (added.length) log('added default logins: ' + added.map((u) => `${u.name} (PIN ${u.pin})`).join(', '));
     });
     state.epoch = getPrivate(state.db, '_epoch');
     state.exec = createEngine(state.db, broadcast);
@@ -193,6 +203,16 @@ export async function startServer(opts = {}) {
     req.on('error', rej);
   });
 
+  /** Raw body (old-app backups with photos can be several MB). @param {http.IncomingMessage} req @param {number} max @returns {Promise<Buffer>} */
+  const readRaw = (req, max) => new Promise((res, rej) => {
+    let size = 0;
+    /** @type {Buffer[]} */
+    const chunks = [];
+    req.on('data', (c) => { size += c.length; if (size > max) { rej(new HttpError(413, 'TOO_LARGE')); req.destroy(); } else chunks.push(c); });
+    req.on('end', () => res(Buffer.concat(chunks)));
+    req.on('error', rej);
+  });
+
   /** @param {http.ServerResponse} res @param {number} status @param {any} body */
   const json = (res, status, body) => {
     res.writeHead(status, { ...sec(), 'Content-Type': MIME['.json'], 'Cache-Control': 'no-store' });
@@ -211,6 +231,13 @@ export async function startServer(opts = {}) {
   const dateParam = (url) => {
     const d = url.searchParams.get('date');
     return d && /^\d{4}-\d{2}-\d{2}$/.test(d) ? d : businessDate(state.db, now());
+  };
+
+  /** ?from=&to= (or ?date=) business dates. @param {URL} url @returns {[string, string]} */
+  const rangeParam = (url) => {
+    const ok = (/** @type {string | null} */ d) => (d && /^\d{4}-\d{2}-\d{2}$/.test(d) ? d : null);
+    const from = ok(url.searchParams.get('from')) ?? dateParam(url);
+    return [from, ok(url.searchParams.get('to')) ?? from];
   };
 
   /** rate limit for pairing: 10 claims / minute / IP */
@@ -237,7 +264,10 @@ export async function startServer(opts = {}) {
     'POST /api/setup': async (req, res, url, ip) => {
       if (!isLoopback(ip)) throw new HttpError(403, 'LOOPBACK_ONLY', 'Run setup on the host phone at http://127.0.0.1:8080');
       const b = await readJson(req);
-      return auth.setup(state.db, { ownerName: b.ownerName, pin: b.pin, restaurantName: b.restaurantName }, now());
+      const r = auth.setup(state.db, { ownerName: b.ownerName, pin: b.pin, restaurantName: b.restaurantName, loadDefaults: b.loadDefaults === true }, now(), { imagesDir: dirs.images });
+      putSetting(state.db, '_epoch', randomBytes(8).toString('hex')); // fresh data -> any cached client takes a snapshot
+      state.epoch = getPrivate(state.db, '_epoch');
+      return r;
     },
     'POST /api/recover': async (req, res, url, ip) => {
       if (!isLoopback(ip)) throw new HttpError(403, 'LOOPBACK_ONLY');
@@ -285,12 +315,13 @@ export async function startServer(opts = {}) {
     'GET /api/print/jobs': (req) => { httpAuth(req, 'settings|bill'); return { jobs: queue.list() }; },
     'POST /api/print/retry': async (req) => { httpAuth(req, 'settings|bill'); const b = await readJson(req); return { job: queue.retry(Number(b.id)) ?? null }; },
     'GET /api/reports/day': (req, res, url) => { httpAuth(req, 'reports'); return dayTally(state.db, dateParam(url)); },
-    'GET /api/history': (req, res, url) => { httpAuth(req, 'history'); return { bills: history(state.db, dateParam(url)) }; },
+    'GET /api/reports': (req, res, url) => { httpAuth(req, 'reports'); const [f, t] = rangeParam(url); return report(state.db, f, t); },
+    'GET /api/history': (req, res, url) => { httpAuth(req, 'history|bill'); const [f, t] = rangeParam(url); return { bills: history(state.db, f, t) }; },
     'GET /api/export/csv': (req, res, url) => {
       httpAuth(req, 'export');
-      const d = dateParam(url);
-      res.writeHead(200, { ...sec(), 'Content-Type': 'text/csv; charset=utf-8', 'Content-Disposition': `attachment; filename="bills-${d}.csv"`, 'Cache-Control': 'no-store' });
-      res.end(billsCsv(state.db, d));
+      const [f, t] = rangeParam(url);
+      res.writeHead(200, { ...sec(), 'Content-Type': 'text/csv; charset=utf-8', 'Content-Disposition': `attachment; filename="bills-${f}${t !== f ? '_to_' + t : ''}.csv"`, 'Cache-Control': 'no-store' });
+      res.end(billsCsv(state.db, f, t));
     },
     'GET /api/export/json': (req, res) => {
       httpAuth(req, 'export');
@@ -305,6 +336,17 @@ export async function startServer(opts = {}) {
       if (!f) throw new HttpError(404, 'NOT_FOUND');
       res.writeHead(200, { ...sec(), 'Content-Type': 'application/vnd.sqlite3', 'Content-Disposition': `attachment; filename="${url.searchParams.get('file')}"` });
       createReadStream(f).pipe(res);
+    },
+    'POST /api/import/legacy': async (req) => {
+      httpAuth(req, 'settings');
+      const raw = await readRaw(req, 60_000_000);
+      doBackup('pre-import');
+      const r = importBuffer(raw, state.db, dirs.images);
+      if (!r.skipped) {
+        state.epoch = getPrivate(state.db, '_epoch');
+        setTimeout(() => closeWhere(() => true, 4010, 'import'), 300); // every phone resyncs from a snapshot
+      }
+      return r;
     },
     'POST /api/restore': async (req) => {
       httpAuth(req, 'settings');
@@ -340,6 +382,7 @@ export async function startServer(opts = {}) {
     let file;
     const img = /^\/img\/([0-9a-f]{40}\.(?:jpg|png|webp))$/.exec(path);
     if (img) file = join(dirs.images, img[1]);
+    else if (SHARED.has(path)) file = join(ROOT, path.slice(1)); // pure modules shared with the browser (one money code path)
     else {
       const rel = SPA.has(path) ? 'index.html' : decodeURIComponent(path).replace(/^\/+/, '');
       file = normalize(join(webDir, rel));

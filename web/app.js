@@ -7,6 +7,8 @@ import { device, session, setDevice, setSession, me, can, authHeaders } from './
 import { toast } from './ui.js';
 import { beep, vibrate } from './sound.js';
 
+import * as homeScreen from './screens/home.js';
+import * as orders from './screens/orders.js';
 import * as setup from './screens/setup.js';
 import * as pair from './screens/pair.js';
 import * as login from './screens/login.js';
@@ -23,7 +25,7 @@ import * as adopt from './screens/adopt.js';
 
 /** @typedef {{ name: string, args: string[], query: URLSearchParams }} Route */
 /** @type {Record<string, {render: (r: Route) => Node, title?: string, bare?: boolean}>} */
-const screens = { setup, pair, login, tables, order, kds, bills, bill, reports, admin, whoami, join, adopt };
+const screens = { home: homeScreen, orders, setup, pair, login, tables, order, kds, bills, bill, reports, admin, whoami, join, adopt };
 const PUBLIC = new Set(['setup', 'pair', 'login', 'whoami', 'join', 'adopt']);
 
 export const live = { status: /** @type {'connecting'|'online'|'offline'} */ ('offline'), started: false, unreachable: false };
@@ -43,9 +45,7 @@ export function go(path) {
 
 export function home() {
   if (me.device?.kind === 'kds' || (can('kitchen') && !can('order'))) return go('kds');
-  if (can('order')) return go('tables');
-  if (can('bill') || can('delivery')) return go('bills');
-  if (can('reports')) return go('reports');
+  if (can('order') || can('bill') || can('reports')) return go('home');
   go('whoami');
 }
 
@@ -92,11 +92,17 @@ export function render() {
 
 /** @param {Route} r */
 function topbar(r) {
-  /** @param {string} name @param {string} label @param {boolean} show */
-  const link = (name, label, show) => (show ? h('a' + (r.name === name ? '.on' : ''), { href: '#/' + name }, label) : null);
+  /** @param {string} name @param {string} label @param {boolean} show @param {string} [match] */
+  const link = (name, label, show, match) => (show ? h('a' + (r.name === name || r.name === match ? '.on' : ''), { href: '#/' + name }, label) : null);
+  const support = store.settings.supportPhone || store.settings.supportEmail;
   return h('header.top',
     h('span.dot.' + live.status, { title: live.status }),
-    h('b.brand', store.settings.name || 'POS'),
+    h('a.brand', { href: '#/home' }, store.settings.name || 'POS', h('small', 'MANAGEMENT')),
+    can('order') ? h('button.newo', { onclick: () => go('tables') }, 'New Order') : null,
+    can('history') || can('bill') ? h('input.billno#billno', {
+      placeholder: 'Bill No', inputmode: 'numeric', 'aria-label': 'Find bill by number',
+      onkeydown: (/** @type {KeyboardEvent} */ e) => { if (e.key === 'Enter') findBill(/** @type {HTMLInputElement} */ (e.target).value); },
+    }) : null,
     h('nav',
       link('tables', 'Tables', can('order')),
       link('kds', 'Kitchen', can('kitchen')),
@@ -105,7 +111,20 @@ function topbar(r) {
       link('admin', 'Admin', ['menu', 'layout', 'users', 'settings', 'device.manage'].some(can))),
     h('span.grow'),
     h('span.user', me.user?.name ?? ''),
-    h('button.ghost.small', { onclick: logout }, 'Logout'));
+    h('button.ghost.small', { onclick: logout }, 'Logout'),
+    support ? h('div.help', h('span', 'Biller support 24/7'),
+      store.settings.supportPhone ? h('a', { href: 'tel:' + store.settings.supportPhone }, 'M-' + store.settings.supportPhone) : null,
+      store.settings.supportEmail ? h('a', { href: 'mailto:' + store.settings.supportEmail }, store.settings.supportEmail) : null) : null);
+}
+
+/** Top-bar "Bill No" box: legacy bill numbers (1234) or the new series (KK1/26-27/000123 or just 123). @param {string} v */
+function findBill(v) {
+  const q = v.trim();
+  if (!q) return;
+  const all = [...(store.data.bills?.values() ?? [])];
+  const b = all.find((x) => x.no === q) ?? all.find((x) => String(x.seq) === q.replace(/^0+/, '') || x.no.endsWith('/' + q.padStart(6, '0')));
+  if (!b) return bills.findAndOpen(q); // older bills: ask the host
+  go('bill/' + b.orderId);
 }
 
 function unreachableBanner() {

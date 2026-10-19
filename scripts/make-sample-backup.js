@@ -1,83 +1,72 @@
 // @ts-check
-// Generates a deterministic SYNTHETIC v13-shaped backup for development and CI:
-//   node scripts/make-sample-backup.js > test/golden/backup_v13.sample.json
-// Day 1 replaces test/golden/backup_v13.json with a REAL backup from the father's app.
-// Shape documented in docs/V13_FORMAT.md.
+// Generate a deterministic SAMPLE backup in the father's REAL format by driving his own app
+// (legacy/khanakhajana_v13.html) inside node:vm: default menu, orders with variants / extras /
+// notes / voids / discounts / delivery charge / complimentary, settled with cash, card, UPI,
+// other (GPay…), due, part payment, tips, waive-off and split bills; a few orders left open.
+//   node scripts/make-sample-backup.js > test/golden/backup_v13.json
+// Replace it with a REAL backup from the restaurant ("Download backup" in his Admin › Settings).
+import { loadLegacy } from './legacy-vm.js';
 
-import { calcTotals } from '../server/domain/totals.js';
+let clock = new Date('2026-10-15T12:00:00+05:30').getTime();
+const L = loadLegacy({ seed: 20261019, now: () => clock });
+L.ctx.__tick = (/** @type {number} */ ms) => { clock += ms; };
 
-const settings = { name: 'Khana Khajana', address: 'Main Road, Indore', phone: '9800000000', gstin: '23ABCDE1234F1Z5', fssai: '11223344556677', cgst: 2.5, sgst: 2.5, serviceChargePct: 5, compositionScheme: false, specifiedPremises: false, paper: 80, footer: 'Thank you! Visit again.' };
-let seed = 20261018;
-const rnd = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
-const pick = (/** @type {any[]} */ a) => a[Math.floor(rnd() * a.length)];
-
-const groups = [
-  { id: 1, name: 'Starters', subgroups: [{ id: 11, name: 'Veg' }, { id: 12, name: 'Non-veg' }] },
-  { id: 2, name: 'Main course', subgroups: [{ id: 21, name: 'Curries' }, { id: 22, name: 'Rice' }] },
-  { id: 3, name: 'Breads', subgroups: [] },
-  { id: 4, name: 'Beverages', subgroups: [] },
-];
-const items = [
-  { id: 101, name: 'Paneer Tikka', code: '1', price: 249, groupId: 1, subgroupId: 11, diet: 'veg', fav: true, variants: [{ name: 'Half', price: 149 }, { name: 'Full', price: 249 }], extras: [{ name: 'Extra cheese', price: 40 }] },
-  { id: 102, name: 'Chicken 65', code: '2', price: 279.5, groupId: 1, subgroupId: 12, diet: 'nonveg', fav: true, variants: [], extras: [] },
-  { id: 103, name: 'Egg Bhurji', code: '3', price: 129, groupId: 1, subgroupId: 12, diet: 'egg', variants: [], extras: [{ name: 'Butter', price: 15.5 }] },
-  { id: 201, name: 'Dal Makhani', code: '10', price: 219, groupId: 2, subgroupId: 21, diet: 'veg', fav: true, variants: [], extras: [] },
-  { id: 202, name: 'Butter Chicken', code: '11', price: 329, groupId: 2, subgroupId: 21, diet: 'nonveg', variants: [], extras: [] },
-  { id: 203, name: 'Veg Biryani', code: '12', price: 199.99, groupId: 2, subgroupId: 22, diet: 'veg', variants: [], extras: [{ name: 'Raita', price: 35 }] },
-  { id: 301, name: 'Butter Naan', code: '20', price: 45, groupId: 3, diet: 'veg', variants: [], extras: [] },
-  { id: 302, name: 'Tandoori Roti', code: '21', price: 22.5, groupId: 3, diet: 'veg', variants: [], extras: [] },
-  { id: 401, name: 'Masala Chaas', code: '30', price: 39, groupId: 4, diet: 'veg', station: 'bar', variants: [], extras: [] },
-  { id: 402, name: 'Fresh Lime Soda', code: '31', price: 69, groupId: 4, diet: 'veg', station: 'bar', variants: [], extras: [] },
-];
-const sections = [
-  { id: 1, name: 'AC Hall', tables: Array.from({ length: 8 }, (_, i) => ({ id: 100 + i, name: String(i + 1), seats: 4 })) },
-  { id: 2, name: 'Garden', tables: Array.from({ length: 4 }, (_, i) => ({ id: 200 + i, name: 'G' + (i + 1), seats: 6 })) },
-];
-const users = [
-  { id: 1, name: 'Papa', role: 'owner', pin: '1234' },
-  { id: 2, name: 'Ravi', role: 'manager', pin: '2345' },
-  { id: 3, name: 'Sunita', role: 'biller', pin: '3456' },
-  { id: 4, name: 'Amit', role: 'captain', pin: '4567' },
-  { id: 5, name: 'Kitchen', role: 'kitchen', pin: '5678' },
-];
-const orders = [];
-let billNo = 1200, kot = 0;
-const dates = ['2026-10-15', '2026-10-16', '2026-10-17'];
-for (let i = 0; i < 90; i++) {
-  const date = dates[Math.floor(i / 30)];
-  if (i % 30 === 0) kot = 0;
-  const type = pick(['dine', 'dine', 'dine', 'takeaway', 'delivery']);
-  const lines = [];
-  const n = 1 + Math.floor(rnd() * 5);
-  const k1 = ++kot, k2 = rnd() < 0.3 ? ++kot : k1;
-  for (let j = 0; j < n; j++) {
-    const it = pick(items);
-    const v = it.variants.length ? pick(it.variants) : null;
-    const ex = it.extras.length && rnd() < 0.4 ? [it.extras[0]] : [];
-    lines.push({ itemId: it.id, name: it.name, price: v ? v.price : it.price, qty: 1 + Math.floor(rnd() * 3), variant: v ? v.name : '', extras: ex, note: rnd() < 0.2 ? 'less spicy' : '', void: rnd() < 0.08, voidReason: '', kot: j < n / 2 ? k1 : k2 });
+const out = L.run(String.raw`(() => {
+  const rnd = Math.random;
+  const pick = a => a[Math.floor(rnd() * a.length)];
+  db = defaults();
+  db.settings.name = 'KHANAKHAJANA'; db.settings.address = 'Main Road'; db.settings.gstin = '24ABCDE1234F1Z5';
+  db.settings.taxOnDelivery = true; db.settings.defaultDelivery = 40;
+  db.settings.custTags = [{ id: 'tg1', name: 'School', disc: 20 }, { id: 'tg2', name: 'Friends', disc: 12 }];
+  const items = allItems().map(x => x.item).filter(i => i.active);
+  const tables = allTables();
+  for (let n = 0; n < 75; n++) {
+    __tick(n % 25 === 0 && n ? 18 * 3600e3 : 9 * 60e3);
+    const type = pick(['dine', 'dine', 'dine', 'pickup', 'delivery']);
+    let o;
+    if (type === 'dine') { const t = pick(tables); o = orderForTable(t.id) || newOrder({ type: 'dine', tableId: t.id, tableName: t.name, section: t.sec, seats: t.seats }); }
+    else if (type === 'pickup') o = newOrder({ type, tableName: 'PK' + dayCounter('PK') });
+    else { const p = pick(PLATFORMS); o = newOrder({ type, platform: p[0], tableName: p[1] + dayCounter(p[1]), delivery: num(db.settings.defaultDelivery), customer: { name: 'Cust ' + n, phone: '98' + String(76543210 + n * 7), ref: 'APP' + n, address: 'Street ' + n, locality: 'Area', tag: '' } }); }
+    const k = 1 + Math.floor(rnd() * 5);
+    for (let j = 0; j < k; j++) {
+      const it = pick(items);
+      const v = it.variants.length ? pick(it.variants) : null;
+      const ex = it.extras && rnd() < 0.6 ? { [pick(db.extras).id]: 1 + Math.floor(rnd() * 2) } : {};
+      addLine(o, mkLine(it, { variantId: v && v.id, extras: ex, qty: 1 + Math.floor(rnd() * 3), notes: rnd() < 0.2 ? [pick(db.notes)] : [], text: rnd() < 0.1 ? 'no onion' : '' }));
+    }
+    if (rnd() < 0.08) addLine(o, mkOpenLine('Birthday cake', 450.5, 1));
+    touch(o);
+    makeKOT(o);
+    if (rnd() < 0.15) { const l = pick(activeLines(o)); logVoid(o, l, 'Customer changed mind', curUser()); l.void = true; }
+    if (!hasItems(o)) addLine(o, mkLine(items[0], { variantId: items[0].variants[0] && items[0].variants[0].id }));
+    if (rnd() < 0.2) o.discount = rnd() < 0.5 ? { mode: 'pct', value: pick([5, 7.5, 10, 12.5, 15, 20]), reason: 'Regular' } : { mode: 'fix', value: pick([20, 33.33, 50, 99.99]), reason: 'Promo' };
+    if (type === 'delivery' && rnd() < 0.3) o.delivery = pick([0, 30, 49.5]);
+    if (rnd() < 0.04) o.comp = true;
+    o.persons = type === 'dine' ? 1 + Math.floor(rnd() * 6) : 0;
+    touch(o);
+    if (n >= 72) continue;                                    // a few stay open (running tables)
+    __tick(25 * 60e3 + Math.floor(rnd() * 40) * 60e3);
+    const T = calcTotals(o);
+    if (!o.comp && rnd() < 0.08) { settleSplit(o, ['cash', pick(['card', 'upi', 'cash'])]); continue; }
+    const r = rnd(), pay = emptyPay();
+    if (o.comp) pay.mode = 'comp';
+    else if (r < 0.35) { const given = Math.ceil(T.total / 100) * 100; Object.assign(pay, { mode: 'cash', cash: T.total, tendered: given, change: given - T.total }); }
+    else if (r < 0.55) Object.assign(pay, { mode: 'upi', upi: T.total });
+    else if (r < 0.68) Object.assign(pay, { mode: 'card', card: T.total, tip: rnd() < 0.5 ? 50 : 0 });
+    else if (r < 0.78) Object.assign(pay, { mode: 'other', other: T.total, otherType: 'Google Pay', otherBreak: { 'Google Pay': T.total } });
+    else if (r < 0.86) { o.customer = Object.assign(o.customer, { name: 'Sharma ' + n, phone: '99' + String(10000000 + n) }); Object.assign(pay, { mode: 'due', due: T.total }); }
+    else if (r < 0.94 && T.total > 100) { const half = Math.floor(T.total / 2); Object.assign(pay, { mode: 'part', card: half, cash: T.total - half, tendered: T.total - half, parts: [{ mode: 'card', amount: half, type: '' }] }); }
+    else { const settle = Math.max(0, T.total - 3); Object.assign(pay, { mode: 'cash', cash: settle, tendered: settle, waived: r2(T.total - settle) }); }
+    settleOrder(o, pay);
   }
-  for (const l of lines) if (l.void) l.voidReason = 'customer changed mind';
-  if (rnd() < 0.05) lines.push({ itemId: null, name: 'Open item', price: 57.75, qty: 1, variant: '', extras: [], note: '', void: false, voidReason: '', kot: k2 });
-  const r = rnd();
-  const discount = r < 0.12 ? { type: 'pct', value: pick([5, 7.5, 10, 12.5, 15]), reason: 'regular' } : r < 0.2 ? { type: 'fixed', value: pick([20, 50, 33.33, 100]), reason: 'promo' } : null;
-  const complimentary = r > 0.97;
-  const serviceCharge = rnd() < 0.1;
-  const o = {
-    id: 5000 + i, no: (i % 30) + 1, date, time: Date.parse(date + 'T13:00:00+05:30') + i * 600_000, type,
-    tableId: type === 'dine' ? pick(sections.flatMap((s) => s.tables)).id : null, persons: type === 'dine' ? 1 + Math.floor(rnd() * 5) : 0,
-    lines, discount, complimentary, serviceCharge, billNo: String(++billNo), status: 'settled',
-    platform: type === 'delivery' ? pick(['Zomato', 'Swiggy', 'Phone']) : '',
-    customer: type === 'delivery' ? { name: 'Cust ' + i, phone: '98' + String(10000000 + i * 7919).slice(0, 8) } : null,
-    payments: /** @type {any[]} */ ([]),
-  };
-  // payments only make the sample realistic; the golden test never reads them
-  const total = calcTotals(/** @type {any} */ (o), settings).total;
-  o.payments = total && rnd() < 0.25 ? [{ mode: 'cash', amount: Math.floor(total / 2) }, { mode: 'upi', amount: total - Math.floor(total / 2) }] : [{ mode: pick(['cash', 'upi', 'card']), amount: total }];
-  orders.push(o);
-}
-console.log(JSON.stringify({
-  app: 'khanakhajana', version: 13, _sample: 'SYNTHETIC — replace with a real v13 backup on Day 1',
-  settings,
-  counters: { kot, kotDate: dates.at(-1), bill: billNo, order: 30 },
-  groups, items, sections, users, notes: ['Less spicy', 'No onion', 'Jain', 'Extra hot', 'Pack separately'], orders,
-}, null, 1));
+  const c = Object.values(db.customers).find(x => x.due > 0);
+  if (c) { const amt = Math.min(100, c.due); c.due = r2(c.due - amt); db.dueReceipts.push({ id: uid('dr'), time: Date.now(), phone: c.phone, name: c.name, amount: amt, mode: 'cash', by: 'Owner' }); }
+  db.dayClose[dayKey()] = { counted: 1234, by: 'Owner', time: Date.now() };
+  /* drop combo photos from the sample to keep it small (the importer handles img data URLs) */
+  db.menu.groups.forEach(g => g.subs.forEach(s => s.items.forEach(i => { if (i.img) i.img = ''; })));
+  return JSON.stringify(db);
+})()`);
+const d = JSON.parse(out);
+d._sample = 'SYNTHETIC — generated by driving the legacy app in node:vm; replace with a REAL backup';
+process.stdout.write(JSON.stringify(d, null, 1) + '\n');
+console.error(`bills ${d.bills.length}, open orders ${Object.keys(d.orders).length}, customers ${Object.keys(d.customers).length}, voids ${d.voidLog.length}`);

@@ -42,7 +42,9 @@ test('due payment needs a customer and customers.due; due.receive reduces the ba
   const oid = t.cmd('captain', 'kot.create', { tableId: m.tables[0], lines: [{ itemId: m.items.dal, qty: 2 }] }).orderId;
   const b = t.cmd('biller', 'bill.print', { orderId: oid });
   t.code('CUSTOMER_REQUIRED', () => t.cmd('biller', 'bill.settle', { billId: b.billId, payments: [{ mode: 'due', amount: b.totalPaise }] }));
-  t.cmd('biller', 'bill.settle', { billId: b.billId, payments: [{ mode: 'cash', amount: 20000 }, { mode: 'due', amount: b.totalPaise - 20000, phone: '9876543210', name: 'Sharma ji' }] });
+  t.code('CUSTOMER_REQUIRED', () => t.cmd('biller', 'bill.settle', { billId: b.billId, payments: [{ mode: 'due', amount: b.totalPaise }], customer: { phone: '9876543210' } })); // name needed too
+  t.code('BAD_PAYLOAD', () => t.cmd('manager', 'bill.settle', { billId: b.billId, payments: [{ mode: 'due', amount: b.totalPaise - 100 }], waive: 100, waiveReason: 'x', customer: { name: 'A', phone: '9876543210' } }));
+  t.cmd('biller', 'bill.settle', { billId: b.billId, payments: [{ mode: 'cash', amount: 20000 }, { mode: 'due', amount: b.totalPaise - 20000 }], customer: { phone: '98765 43210', name: 'Sharma ji' } });
   const c = get(t.db, 'SELECT * FROM customers WHERE phone=?', '9876543210');
   assert.equal(c.due_paise, b.totalPaise - 20000);
   t.code('FORBIDDEN', () => t.cmd('captain', 'due.receive', { customerId: c.id, amount: 100 }));
@@ -71,7 +73,12 @@ test('50 random settlements reconcile exactly in paise', () => {
   /** @type {Record<string, number>} */
   const byMode = { cash: 0, card: 0, upi: 0, due: 0, other: 0 };
   for (let i = 0; i < 50; i++) {
-    const lines = Array.from({ length: 1 + Math.floor(rnd() * 4) }, () => ({ itemId: items[Math.floor(rnd() * items.length)], qty: 1 + Math.floor(rnd() * 3) }));
+    const lines = Array.from({ length: 1 + Math.floor(rnd() * 4) }, () => {
+      const itemId = items[Math.floor(rnd() * items.length)];
+      return itemId === m.items.tikka
+        ? { itemId, variant: rnd() < 0.5 ? 'Half' : 'Full', sides: rnd() < 0.5 ? [{ id: m.sides.cheese, qty: 1 + Math.floor(rnd() * 2) }] : [], qty: 1 + Math.floor(rnd() * 3) }
+        : { itemId, qty: 1 + Math.floor(rnd() * 3) };
+    });
     const oid = t.cmd('biller', 'order.line.add', { type: 'takeaway', lines }).orderId;
     const disc = rnd() < 0.3 ? { type: rnd() < 0.5 ? 'pct' : 'fixed', value: rnd() < 0.5 ? 7.5 : 33.33, reason: 'r' } : undefined;
     const b = t.cmd('manager', 'bill.print', { orderId: oid, discount: disc, serviceCharge: rnd() < 0.2 });
@@ -95,7 +102,7 @@ test('50 random settlements reconcile exactly in paise', () => {
   for (const b of bills) {
     const paid = get(t.db, 'SELECT COALESCE(SUM(amount_paise),0) AS s FROM bill_payments WHERE bill_id=?', b.id).s;
     assert.equal(paid, b.total_paise + b.tip_paise - b.waived_paise, b.no);
-    assert.equal(b.taxable_paise + b.cgst_paise + b.sgst_paise + b.service_paise + b.roundoff_paise, b.total_paise, 'components add up ' + b.no);
+    assert.equal(b.taxable_paise + b.tax_paise + b.delivery_paise + b.service_paise + b.roundoff_paise, b.total_paise, 'components add up ' + b.no);
   }
   const tally = dayTally(t.db, bills[0].business_date);
   assert.equal(tally.settled, 50);

@@ -121,7 +121,7 @@ export async function run(type, payload = {}, okMsg) {
     if (!isOnline()) toast('Host offline — saved, will send on reconnect', 'info');
     const r = await send(type, payload);
     if (okMsg) toast(okMsg, 'ok');
-    return r;
+    return r ?? true; // success is always truthy, even for commands without a result
   } catch (e) {
     const err = /** @type {any} */ (e);
     if (err.code === 'APPROVAL_REQUIRED') {
@@ -134,7 +134,7 @@ export async function run(type, payload = {}, okMsg) {
   }
 }
 
-/** Run, swallowing the (already toasted) error. @param {string} type @param {any} [payload] @param {string} [okMsg] */
+/** Run, swallowing the (already toasted) error: resolves to the result (truthy) or null on failure. @param {string} type @param {any} [payload] @param {string} [okMsg] */
 export const tryRun = (type, payload, okMsg) => run(type, payload, okMsg).catch(() => null);
 
 /** Download a Blob as a file (works on insecure origins). @param {Blob} blob @param {string} name */

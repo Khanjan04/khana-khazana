@@ -1,0 +1,2796 @@
+{
+ "source": "legacy/khanakhajana_v13.html defaults() (DB_VER 13)",
+ "settings": {
+  "name": "KHANAKHAJANA",
+  "footer": "Thank you! Visit again.",
+  "taxes": [
+   {
+    "name": "CGST",
+    "rate": 2.5
+   },
+   {
+    "name": "SGST",
+    "rate": 2.5
+   }
+  ],
+  "taxOnDelivery": false,
+  "defaultDelivery": 0,
+  "paper": 80,
+  "askCustomer": true,
+  "reasonAll": false,
+  "allowOpenItem": true,
+  "otherTypes": [
+   "Google Pay",
+   "PhonePe",
+   "Paytm",
+   "Amazon Pay",
+   "Other"
+  ],
+  "custTags": []
+ },
+ "layout": [
+  {
+   "name": "AC",
+   "enabled": true,
+   "cfg": {
+    "prefix": "AC",
+    "rows": 2,
+    "cols": 4,
+    "seats": "4,6",
+    "standing": false,
+    "startNo": 1
+   }
+  },
+  {
+   "name": "Non-AC",
+   "enabled": true,
+   "cfg": {
+    "prefix": "NA",
+    "rows": 2,
+    "cols": 3,
+    "seats": "4,6",
+    "standing": false,
+    "startNo": 1
+   }
+  },
+  {
+   "name": "Garden",
+   "enabled": true,
+   "cfg": {
+    "prefix": "G",
+    "rows": 2,
+    "cols": 3,
+    "seats": "6,6",
+    "standing": false,
+    "startNo": 1
+   }
+  },
+  {
+   "name": "Terrace",
+   "enabled": true,
+   "cfg": {
+    "prefix": "T",
+    "rows": 1,
+    "cols": 6,
+    "seats": "",
+    "standing": true,
+    "startNo": 1
+   }
+  },
+  {
+   "name": "Bar",
+   "enabled": false,
+   "cfg": {
+    "prefix": "BA",
+    "rows": 2,
+    "cols": 4,
+    "seats": "4",
+    "standing": false,
+    "startNo": 1
+   }
+  },
+  {
+   "name": "Bar & Restaurant",
+   "enabled": false,
+   "cfg": {
+    "prefix": "BR",
+    "rows": 2,
+    "cols": 4,
+    "seats": "4",
+    "standing": false,
+    "startNo": 1
+   }
+  },
+  {
+   "name": "A",
+   "enabled": false,
+   "cfg": {
+    "prefix": "A",
+    "rows": 2,
+    "cols": 4,
+    "seats": "4",
+    "standing": false,
+    "startNo": 1
+   }
+  },
+  {
+   "name": "B",
+   "enabled": false,
+   "cfg": {
+    "prefix": "B",
+    "rows": 2,
+    "cols": 4,
+    "seats": "4",
+    "standing": false,
+    "startNo": 1
+   }
+  },
+  {
+   "name": "C",
+   "enabled": false,
+   "cfg": {
+    "prefix": "C",
+    "rows": 2,
+    "cols": 4,
+    "seats": "4",
+    "standing": false,
+    "startNo": 1
+   }
+  },
+  {
+   "name": "D",
+   "enabled": false,
+   "cfg": {
+    "prefix": "D",
+    "rows": 2,
+    "cols": 4,
+    "seats": "4",
+    "standing": false,
+    "startNo": 1
+   }
+  }
+ ],
+ "menu": [
+  {
+   "name": "Beverages",
+   "subs": [
+    {
+     "name": "Beverages",
+     "items": [
+      {
+       "name": "Mango Lassi",
+       "price": 150,
+       "diet": "",
+       "available": true,
+       "allowSides": false,
+       "fav": true,
+       "code": "MLA",
+       "num": 1,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Sweet / Salted Lassi",
+       "price": 100,
+       "diet": "",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "SSL",
+       "num": 2,
+       "variants": [
+        {
+         "name": "Sweet",
+         "price": 100
+        },
+        {
+         "name": "Salted",
+         "price": 100
+        }
+       ],
+       "img": ""
+      },
+      {
+       "name": "Masala Chaas",
+       "price": 60,
+       "diet": "",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "MCH",
+       "num": 3,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Nimbu Pani / Shikanji",
+       "price": 50,
+       "diet": "",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "NPS",
+       "num": 4,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Fresh Lime Soda",
+       "price": 80,
+       "diet": "",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "FLS",
+       "num": 5,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Jaljeera Soda",
+       "price": 60,
+       "diet": "",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "JSO",
+       "num": 6,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Aam Panna",
+       "price": 100,
+       "diet": "",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "APA",
+       "num": 7,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Thandai",
+       "price": 120,
+       "diet": "",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "THA",
+       "num": 8,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Masala Chai",
+       "price": 60,
+       "diet": "",
+       "available": true,
+       "allowSides": false,
+       "fav": true,
+       "code": "MCM",
+       "num": 9,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "South Indian Filter Coffee",
+       "price": 80,
+       "diet": "",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "SIF",
+       "num": 10,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Kashmiri Kahwa",
+       "price": 100,
+       "diet": "",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "KKA",
+       "num": 11,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Thums Up / Limca",
+       "price": 50,
+       "diet": "",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "TUL",
+       "num": 12,
+       "variants": [
+        {
+         "name": "Thums Up",
+         "price": 50
+        },
+        {
+         "name": "Limca",
+         "price": 50
+        }
+       ],
+       "img": ""
+      },
+      {
+       "name": "Tender Coconut Water",
+       "price": 80,
+       "diet": "",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "TCW",
+       "num": 13,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Starter",
+   "subs": [
+    {
+     "name": "Vegetarian Starter",
+     "items": [
+      {
+       "name": "Pav Bhaji",
+       "price": 150,
+       "diet": "v",
+       "available": true,
+       "allowSides": true,
+       "fav": true,
+       "code": "PBH",
+       "num": 14,
+       "variants": [
+        {
+         "name": "Oil",
+         "price": 300
+        },
+        {
+         "name": "Butter",
+         "price": 400
+        }
+       ],
+       "img": ""
+      },
+      {
+       "name": "Paneer Tikka",
+       "price": 200,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": true,
+       "code": "PTI",
+       "num": 15,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Tandoori Malai Broccoli",
+       "price": 300,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "TMB",
+       "num": 16,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Soya Chaap Tikka",
+       "price": 250,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "SCT",
+       "num": 17,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Samosa",
+       "price": 100,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": true,
+       "code": "SAM",
+       "num": 18,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Mix Veg Pakora",
+       "price": 150,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "MVP",
+       "num": 19,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Hara Bhara Kabab",
+       "price": 150,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "HBK",
+       "num": 20,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Pani Puri / Golgappa",
+       "price": 100,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "PPG",
+       "num": 21,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Samosa Chaat",
+       "price": 150,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "SCH",
+       "num": 22,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Aloo Tikki Chaat",
+       "price": 125,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "ATC",
+       "num": 23,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Gobi Manchurian",
+       "price": 180,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "GMA",
+       "num": 24,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Veg Spring Rolls",
+       "price": 225,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "VSR",
+       "num": 25,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    },
+    {
+     "name": "Non-Vegetarian Starter",
+     "items": [
+      {
+       "name": "Tandoori Chicken",
+       "price": 200,
+       "diet": "n",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "TCH",
+       "num": 26,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Chicken Tikka",
+       "price": 200,
+       "diet": "n",
+       "available": true,
+       "allowSides": false,
+       "fav": true,
+       "code": "CTI",
+       "num": 27,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Chicken Malai Tikka",
+       "price": 200,
+       "diet": "n",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CMT",
+       "num": 28,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Chicken 65",
+       "price": 200,
+       "diet": "n",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CHI",
+       "num": 29,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Mutton Seekh Kabab",
+       "price": 200,
+       "diet": "n",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "MSK",
+       "num": 30,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Galouti Kabab",
+       "price": 200,
+       "diet": "n",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "GKA",
+       "num": 31,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Amritsari Fish Fry",
+       "price": 200,
+       "diet": "n",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "AFF",
+       "num": 32,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Tandoori Prawns",
+       "price": 200,
+       "diet": "n",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "TPR",
+       "num": 33,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Chilli Paneer / Chilli Chicken",
+       "price": 200,
+       "diet": "",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CPC",
+       "num": 34,
+       "variants": [
+        {
+         "name": "Chilli Paneer",
+         "price": 200
+        },
+        {
+         "name": "Chilli Chicken",
+         "price": 200
+        }
+       ],
+       "img": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Sizzler",
+   "subs": [
+    {
+     "name": "Sizzler",
+     "items": []
+    }
+   ]
+  },
+  {
+   "name": "Main Course",
+   "subs": [
+    {
+     "name": "Vegetarian Main Course",
+     "items": [
+      {
+       "name": "Paneer Butter Masala",
+       "price": 400,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": true,
+       "code": "PBM",
+       "num": 35,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Palak Paneer",
+       "price": 400,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "PPA",
+       "num": 36,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Kadai Paneer",
+       "price": 400,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "KPA",
+       "num": 37,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Shahi Paneer",
+       "price": 400,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "SPA",
+       "num": 38,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Aloo Gobi Matar",
+       "price": 300,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "AGM",
+       "num": 39,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Veg Diwani Handi",
+       "price": 300,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "VDH",
+       "num": 40,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Bhindi Do Pyaza",
+       "price": 300,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "BDP",
+       "num": 41,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Baingan Bharta",
+       "price": 300,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "BBH",
+       "num": 42,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Malai Kofta",
+       "price": 300,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "MKO",
+       "num": 43,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    },
+    {
+     "name": "Non-Vegetarian Main Course",
+     "items": [
+      {
+       "name": "Butter Chicken (Murgh Makhani)",
+       "price": 500,
+       "diet": "n",
+       "available": true,
+       "allowSides": false,
+       "fav": true,
+       "code": "BCM",
+       "num": 44,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Chicken Tikka Masala",
+       "price": 500,
+       "diet": "n",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CTM",
+       "num": 45,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Kadai Chicken",
+       "price": 500,
+       "diet": "n",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "KCH",
+       "num": 46,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Murg Tariwala",
+       "price": 500,
+       "diet": "n",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "MTA",
+       "num": 47,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Rogan Josh",
+       "price": 500,
+       "diet": "n",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "RJO",
+       "num": 48,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Bhuna Gosht",
+       "price": 500,
+       "diet": "n",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "BGO",
+       "num": 49,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Goan Fish Curry",
+       "price": 500,
+       "diet": "n",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "GFC",
+       "num": 50,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Prawn Masala",
+       "price": 500,
+       "diet": "n",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "PMA",
+       "num": 51,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    },
+    {
+     "name": "Curry - Dal",
+     "items": [
+      {
+       "name": "Dal Makhani",
+       "price": 300,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": true,
+       "code": "DMA",
+       "num": 52,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Dal Tadka",
+       "price": 300,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "DTA",
+       "num": 53,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    },
+    {
+     "name": "Rice & Biryani",
+     "items": [
+      {
+       "name": "Veg / Chicken / Mutton Biryani",
+       "price": 300,
+       "diet": "",
+       "available": true,
+       "allowSides": false,
+       "fav": true,
+       "code": "VCM",
+       "num": 54,
+       "variants": [
+        {
+         "name": "Veg",
+         "price": 300
+        },
+        {
+         "name": "Chicken",
+         "price": 300
+        },
+        {
+         "name": "Mutton",
+         "price": 300
+        }
+       ],
+       "img": ""
+      },
+      {
+       "name": "Jeera Rice",
+       "price": 300,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "JRI",
+       "num": 55,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Steamed Basmati Rice",
+       "price": 300,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "SBR",
+       "num": 56,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Pulao (Veg or Peas)",
+       "price": 300,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "PVO",
+       "num": 57,
+       "variants": [
+        {
+         "name": "Veg",
+         "price": 300
+        },
+        {
+         "name": "Peas",
+         "price": 300
+        }
+       ],
+       "img": ""
+      }
+     ]
+    },
+    {
+     "name": "Indian Bread - Roti",
+     "items": [
+      {
+       "name": "Tandoori Roti",
+       "price": 100,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": true,
+       "code": "TRO",
+       "num": 58,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Plain / Butter Naan",
+       "price": 100,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": true,
+       "code": "PBN",
+       "num": 59,
+       "variants": [
+        {
+         "name": "Plain",
+         "price": 100
+        },
+        {
+         "name": "Butter",
+         "price": 100
+        }
+       ],
+       "img": ""
+      },
+      {
+       "name": "Garlic Naan",
+       "price": 100,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "GNA",
+       "num": 60,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Lachha Paratha",
+       "price": 100,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "LPA",
+       "num": 61,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Rumali Roti",
+       "price": 100,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "RRO",
+       "num": 62,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Missi Roti",
+       "price": 100,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "MRO",
+       "num": 63,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dessert",
+   "subs": [
+    {
+     "name": "Dessert",
+     "items": [
+      {
+       "name": "Ice-Cream",
+       "price": 200,
+       "diet": "",
+       "available": true,
+       "allowSides": false,
+       "fav": true,
+       "code": "ICR",
+       "num": 64,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Cake",
+       "price": 200,
+       "diet": "",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CAK",
+       "num": 65,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Baked Pasta",
+       "price": 200,
+       "diet": "",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "BPA",
+       "num": 66,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Cafe",
+   "subs": [
+    {
+     "name": "Chai",
+     "items": [
+      {
+       "name": "Ginger Tea",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "GTE",
+       "num": 67,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Ginger Elaichi Tea",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "GET",
+       "num": 68,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Indian Masala Tea",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "IMT",
+       "num": 69,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Elaichi Tea",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "ETE",
+       "num": 70,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Pudina Elaichi Tea",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "PET",
+       "num": 71,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Ginger Pudina Tea",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "GPT",
+       "num": 72,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Gud Wali Chai",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "GWC",
+       "num": 73,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Zafran Tea",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "ZTE",
+       "num": 74,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Black Tea",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "BTE",
+       "num": 75,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Green Tea",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "GTG",
+       "num": 76,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Kavo",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "KAV",
+       "num": 77,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Healthy Tea (Honey & Lime)",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "HTH",
+       "num": 78,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Chamomile Green Tea",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CGT",
+       "num": 79,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Blue Tea",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "BTB",
+       "num": 80,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Fiery Tea",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "FTE",
+       "num": 81,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Rose Tea",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "RTE",
+       "num": 82,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Lemongrass Ginger Tea",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "LGT",
+       "num": 83,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    },
+    {
+     "name": "Desi Nasta",
+     "items": [
+      {
+       "name": "Poha",
+       "price": 35,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "POH",
+       "num": 84,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Thepla (3 Pcs)",
+       "price": 50,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "TPC",
+       "num": 85,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Upma",
+       "price": 50,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "UPM",
+       "num": 86,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Khichu",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "KHI",
+       "num": 87,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Samosa (2 Pcs)",
+       "price": 65,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "SPC",
+       "num": 88,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Samosa Chaat",
+       "price": 65,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "SCS",
+       "num": 89,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Seviyan Upma",
+       "price": 90,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "SUP",
+       "num": 90,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Masala Oats",
+       "price": 90,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "MOA",
+       "num": 91,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Farali Bhel",
+       "price": 90,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "FBH",
+       "num": 92,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Sabudana Vada (4 Pcs)",
+       "price": 110,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "SVP",
+       "num": 93,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Handvo",
+       "price": 120,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "HAN",
+       "num": 94,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    },
+    {
+     "name": "Tasty Bites",
+     "items": [
+      {
+       "name": "Herb Butter Toast",
+       "price": 40,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "HBT",
+       "num": 95,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Maska Bun",
+       "price": 50,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "MBU",
+       "num": 96,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Maska Bun with Jam",
+       "price": 50,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "MBW",
+       "num": 97,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Chocolate Maska Bun",
+       "price": 70,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CMB",
+       "num": 98,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Spicy Cheese Bun",
+       "price": 90,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "SCB",
+       "num": 99,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Veggie Fingers (5 Pcs)",
+       "price": 85,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "VFP",
+       "num": 100,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Cheese Garlic Bread (3 Pcs)",
+       "price": 115,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CGB",
+       "num": 101,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "French Fries Salted",
+       "price": 95,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "FFS",
+       "num": 102,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Peri Peri French Fries",
+       "price": 120,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "PPF",
+       "num": 103,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "French Fries Cheesy",
+       "price": 135,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "FFC",
+       "num": 104,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Extra Cheese",
+       "price": 35,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "ECH",
+       "num": 105,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    },
+    {
+     "name": "Grilled Sandwiches",
+     "items": [
+      {
+       "name": "Cheese Butter Sandwich",
+       "price": 70,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CBS",
+       "num": 106,
+       "variants": [
+        {
+         "name": "2 Slices",
+         "price": 70
+        },
+        {
+         "name": "3 Slices",
+         "price": 100
+        }
+       ],
+       "img": ""
+      },
+      {
+       "name": "Mexican Cheese Sandwich",
+       "price": 105,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "MCS",
+       "num": 107,
+       "variants": [
+        {
+         "name": "2 Slices",
+         "price": 105
+        },
+        {
+         "name": "3 Slices",
+         "price": 135
+        }
+       ],
+       "img": ""
+      },
+      {
+       "name": "Schezwan Cheese Sandwich",
+       "price": 105,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "SCC",
+       "num": 108,
+       "variants": [
+        {
+         "name": "2 Slices",
+         "price": 105
+        },
+        {
+         "name": "3 Slices",
+         "price": 135
+        }
+       ],
+       "img": ""
+      },
+      {
+       "name": "Cheese Chilli Sandwich",
+       "price": 105,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CCS",
+       "num": 109,
+       "variants": [
+        {
+         "name": "2 Slices",
+         "price": 105
+        },
+        {
+         "name": "3 Slices",
+         "price": 135
+        }
+       ],
+       "img": ""
+      },
+      {
+       "name": "Paneer Sandwich",
+       "price": 105,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "PSA",
+       "num": 110,
+       "variants": [
+        {
+         "name": "Fiery - 2 Slices",
+         "price": 105
+        },
+        {
+         "name": "Fiery - 3 Slices",
+         "price": 135
+        },
+        {
+         "name": "Tandoori - 2 Slices",
+         "price": 105
+        },
+        {
+         "name": "Tandoori - 3 Slices",
+         "price": 135
+        },
+        {
+         "name": "Peri Peri - 2 Slices",
+         "price": 105
+        },
+        {
+         "name": "Peri Peri - 3 Slices",
+         "price": 135
+        }
+       ],
+       "img": ""
+      },
+      {
+       "name": "Extra Cheese (Sandwich)",
+       "price": 35,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "ECS",
+       "num": 111,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    },
+    {
+     "name": "Wraps",
+     "items": [
+      {
+       "name": "Wrap",
+       "price": 100,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "WRA",
+       "num": 112,
+       "variants": [
+        {
+         "name": "Mexican",
+         "price": 100
+        },
+        {
+         "name": "Peri Peri",
+         "price": 100
+        },
+        {
+         "name": "Fiery Paneer",
+         "price": 100
+        },
+        {
+         "name": "Schezwan Paneer",
+         "price": 100
+        },
+        {
+         "name": "Tandoori Paneer",
+         "price": 100
+        }
+       ],
+       "img": ""
+      }
+     ]
+    },
+    {
+     "name": "Khachos",
+     "items": [
+      {
+       "name": "Khacho",
+       "price": 65,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "KHA",
+       "num": 113,
+       "variants": [
+        {
+         "name": "Fiery",
+         "price": 65
+        },
+        {
+         "name": "Mexican",
+         "price": 65
+        },
+        {
+         "name": "Peri Peri",
+         "price": 65
+        },
+        {
+         "name": "Schezwan",
+         "price": 65
+        },
+        {
+         "name": "Tandoori",
+         "price": 65
+        }
+       ],
+       "img": ""
+      }
+     ]
+    },
+    {
+     "name": "Non-Grilled Sandwiches",
+     "items": [
+      {
+       "name": "Bread Butter Sandwich",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "BBS",
+       "num": 114,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Jam Butter Sandwich",
+       "price": 70,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "JBS",
+       "num": 115,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Vegetable Sandwich",
+       "price": 80,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "VSA",
+       "num": 116,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    },
+    {
+     "name": "Puffs",
+     "items": [
+      {
+       "name": "Veg Puff",
+       "price": 40,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "VPU",
+       "num": 117,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Chinese Puff",
+       "price": 45,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CPU",
+       "num": 118,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Flavoured Puff",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "FPU",
+       "num": 119,
+       "variants": [
+        {
+         "name": "Fiery",
+         "price": 60
+        },
+        {
+         "name": "Mexican",
+         "price": 60
+        },
+        {
+         "name": "Peri Peri",
+         "price": 60
+        },
+        {
+         "name": "Schezwan",
+         "price": 60
+        },
+        {
+         "name": "Tandoori",
+         "price": 60
+        }
+       ],
+       "img": ""
+      },
+      {
+       "name": "Cheese Puff",
+       "price": 70,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CPH",
+       "num": 120,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    },
+    {
+     "name": "Quick Noodles",
+     "items": [
+      {
+       "name": "Masala / Schezwan Noodles",
+       "price": 60,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "MSN",
+       "num": 121,
+       "variants": [
+        {
+         "name": "Masala - Without Cheese",
+         "price": 60
+        },
+        {
+         "name": "Masala - With Cheese",
+         "price": 95
+        },
+        {
+         "name": "Schezwan - Without Cheese",
+         "price": 60
+        },
+        {
+         "name": "Schezwan - With Cheese",
+         "price": 95
+        }
+       ],
+       "img": ""
+      },
+      {
+       "name": "Tadka Noodles",
+       "price": 100,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "TNO",
+       "num": 122,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Pizzaria",
+   "subs": [
+    {
+     "name": "Featured Items",
+     "items": [
+      {
+       "name": "Farm Villa Pizza",
+       "price": 275,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "FVP",
+       "num": 123,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Burn To Hell Pizza",
+       "price": 275,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "BTH",
+       "num": 124,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Cheezy-7 Pizza",
+       "price": 295,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CPI",
+       "num": 125,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "English Retreat Pizza",
+       "price": 295,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "ERP",
+       "num": 126,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Las Vegas Treat Pizza",
+       "price": 295,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "LVT",
+       "num": 127,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Korma Special Pizza",
+       "price": 295,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "KSP",
+       "num": 128,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    },
+    {
+     "name": "Classic Pizzas For Classic Maniacs",
+     "items": [
+      {
+       "name": "Pineapple Pizza",
+       "price": 109,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "PPI",
+       "num": 129,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Cheese & Herb Pizza",
+       "price": 59,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CHP",
+       "num": 130,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Tomatoes Pizza",
+       "price": 69,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "TPI",
+       "num": 131,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Onions Pizza",
+       "price": 85,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "OPI",
+       "num": 132,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Sweet Corns Pizza",
+       "price": 105,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "SCP",
+       "num": 133,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Capsicum Pizza",
+       "price": 99,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CPA",
+       "num": 134,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Onions & Capsicum Pizza",
+       "price": 115,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "OCP",
+       "num": 135,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Veg Loaded",
+       "price": 199,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "VLO",
+       "num": 136,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Onions & Paneer Pizza",
+       "price": 125,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "OPP",
+       "num": 137,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Capsicum & Paneer Pizza",
+       "price": 125,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CPP",
+       "num": 138,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Jalapenos & Olives Pizza",
+       "price": 125,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "JOP",
+       "num": 139,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Capsicum, Paneer & Red Paprika Pizza",
+       "price": 145,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CPR",
+       "num": 140,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Jalapenos, Sweet Corns & Paneer Pizza",
+       "price": 135,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "JSC",
+       "num": 141,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    },
+    {
+     "name": "4 In 1 Giant Pizza",
+     "items": [
+      {
+       "name": "Exotic Pizza Feast",
+       "price": 899,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "EPF",
+       "num": 142,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "International Pizza Feast",
+       "price": 899,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "IPF",
+       "num": 143,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Classic Pizza Feast",
+       "price": 799,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CPF",
+       "num": 144,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    },
+    {
+     "name": "Veg Pizza",
+     "items": [
+      {
+       "name": "Margherita Pizza",
+       "price": 155,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "MPI",
+       "num": 145,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Onion Twist",
+       "price": 155,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "OTW",
+       "num": 146,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Sweet Corns Delight",
+       "price": 155,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "SCD",
+       "num": 147,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Makhni Do Pyaza",
+       "price": 155,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "MDP",
+       "num": 148,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Double Cheese Margherita Pizza",
+       "price": 225,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "DCM",
+       "num": 149,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Lovers Bite Pizza",
+       "price": 225,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "LBP",
+       "num": 150,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Mac Special Pizza",
+       "price": 225,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "MSP",
+       "num": 151,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Spring Fling Pizza",
+       "price": 225,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "SFP",
+       "num": 152,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Sweet Heat Pizza",
+       "price": 275,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "SHP",
+       "num": 153,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Garden Special Pizza",
+       "price": 275,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "GSP",
+       "num": 154,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Farm Villa Pizza",
+       "price": 275,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "FVF",
+       "num": 155,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Paneer Special Pizza",
+       "price": 275,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "PSP",
+       "num": 156,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Ala Mexican Pizza",
+       "price": 295,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "AMP",
+       "num": 157,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Cheezy-7 Pizza",
+       "price": 295,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CPE",
+       "num": 158,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Authentic Veg Pizza",
+       "price": 295,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "AVP",
+       "num": 159,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Tandoori Special Pizza",
+       "price": 295,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "TSP",
+       "num": 160,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Jamaican Jerk Veg Pizza",
+       "price": 255,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "JJV",
+       "num": 161,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Nashville Veg Pizza",
+       "price": 255,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "NVP",
+       "num": 162,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Korean Veg Pizza",
+       "price": 255,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "KVP",
+       "num": 163,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    },
+    {
+     "name": "Personal Slice Veg Pizza",
+     "items": [
+      {
+       "name": "Margherita Pizza Personal Slice",
+       "price": 120,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "MPP",
+       "num": 164,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Jamaican Jerk Veg Pizza Personal Slice",
+       "price": 235,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "JJJ",
+       "num": 165,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Nashville Veg Pizza Personal Slice",
+       "price": 235,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "NVN",
+       "num": 166,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Korean Veg Pizza Personal Slice",
+       "price": 235,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "KVK",
+       "num": 167,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Sweet Corns Delight Personal Slice",
+       "price": 120,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "SCW",
+       "num": 168,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Mac Special Personal Slice",
+       "price": 195,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "MSM",
+       "num": 169,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Makhani Do Pyaza Personal Slice",
+       "price": 120,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "MDM",
+       "num": 170,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Onion Twist Personal Slice",
+       "price": 120,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "OTP",
+       "num": 171,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Garden Special Pizza Personal Slice",
+       "price": 245,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "GSG",
+       "num": 172,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Cheezy-7 Pizza Personal Slice",
+       "price": 265,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CPZ",
+       "num": 173,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Cheese Lover Pizza Personal Slice",
+       "price": 265,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CLP",
+       "num": 174,
+       "variants": [],
+       "img": ""
+      },
+      {
+       "name": "Las Vegas Treat Pizza Personal Slice",
+       "price": 265,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "LVL",
+       "num": 175,
+       "variants": [],
+       "img": ""
+      }
+     ]
+    },
+    {
+     "name": "Super Saver Combos",
+     "items": [
+      {
+       "name": "Regular Pizza + Brownie + Coke 250ml",
+       "price": 299,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "RPB",
+       "num": 176,
+       "variants": [],
+       "img": "i01"
+      },
+      {
+       "name": "Cheesy Paneer With Korean Rice + Choco Lava + Coke",
+       "price": 249,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CPW",
+       "num": 177,
+       "variants": [],
+       "img": "i02"
+      },
+      {
+       "name": "Cheesy Paneer With Korean Rice + 1 Pc Veg Taco + Coke",
+       "price": 229,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CPS",
+       "num": 178,
+       "variants": [],
+       "img": "i03"
+      },
+      {
+       "name": "Garden Special (R) (Double Burst) + Lapinoz Paneer (R) (Double Burst) + Free Garlic Bread",
+       "price": 688,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "GSR",
+       "num": 179,
+       "variants": [],
+       "img": "i04"
+      },
+      {
+       "name": "Paneer Tikka Butter Masala Pizza (R) + Stuffed Garlic Bread Sweet Corn + Free Chocolava",
+       "price": 410,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "PTB",
+       "num": 180,
+       "variants": [],
+       "img": "i05"
+      },
+      {
+       "name": "Cheesy Mac Veg (R) + Paneer Tikka Butter Masala Taco + Free Chocolava",
+       "price": 420,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CMV",
+       "num": 181,
+       "variants": [],
+       "img": "i06"
+      },
+      {
+       "name": "Lapinoz Paneer Pizza (M) + Cheesy 7 (M) + Mexicana Pasta",
+       "price": 1220,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "LPP",
+       "num": 182,
+       "variants": [],
+       "img": "i07"
+      },
+      {
+       "name": "Tandoori Special Pizza (R) + Garlic Bread Sticks With Dip + Free Margarita Pizza (R)",
+       "price": 460,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "TST",
+       "num": 183,
+       "variants": [],
+       "img": "i08"
+      },
+      {
+       "name": "Cheesy 7 Pizza (R) + Paneer Tikka Stuffed Garlic Bread + Free Chocolava",
+       "price": 420,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "CPY",
+       "num": 184,
+       "variants": [],
+       "img": "i09"
+      },
+      {
+       "name": "Authentic Veg Pizza (R) + Stuffed Garlic Bread Paneer Tikka Butter Masala + Free Chocolava",
+       "price": 420,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "AVA",
+       "num": 185,
+       "variants": [],
+       "img": "i10"
+      },
+      {
+       "name": "Peri Peri Veg Pizza (R) + Veg White Sauce Pasta + Free Garlic Bread Sticks + Dip",
+       "price": 444,
+       "diet": "v",
+       "available": true,
+       "allowSides": false,
+       "fav": false,
+       "code": "PPV",
+       "num": 186,
+       "variants": [],
+       "img": "i11"
+      }
+     ]
+    },
+    {
+     "name": "Sides",
+     "items": []
+    },
+    {
+     "name": "Super Cheesy Double Burst Pizza",
+     "items": []
+    },
+    {
+     "name": "Super Saver Deals",
+     "items": []
+    }
+   ]
+  }
+ ],
+ "extras": [
+  {
+   "name": "Chutney - Red",
+   "price": 25
+  },
+  {
+   "name": "Chutney - Green",
+   "price": 25
+  },
+  {
+   "name": "Tomato Ketchup",
+   "price": 25
+  },
+  {
+   "name": "Curd",
+   "price": 25
+  }
+ ],
+ "notes": [
+  "Swaminarayan",
+  "Jain",
+  "Less Spicy",
+  "Spicy",
+  "No Sugar",
+  "Less Sugar",
+  "Extra Sambhar",
+  "Extra Butter",
+  "Less Butter",
+  "Less Oil"
+ ]
+}

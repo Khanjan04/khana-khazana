@@ -36,7 +36,8 @@ test('bill totals equal the legacy port in paise; snapshot frozen on the bill', 
   assert.deepEqual([b.subtotal_paise, b.cgst_paise, b.sgst_paise, b.roundoff_paise, b.total_paise], [exp.subtotal, exp.cgst, exp.sgst, exp.roundOff, exp.total]);
   assert.equal(b.subtotal_paise, 21900 + 2 * 4500);
   const snap = JSON.parse(b.snapshot);
-  assert.equal(snap.title, 'Tax Invoice');
+  assert.equal(snap.title, 'Bill'); // legacy: "TAX INVOICE" only when a GSTIN is set
+  assert.deepEqual(JSON.parse(b.taxes).map((/** @type {any} */ x) => x.name), ['CGST', 'SGST']);
   assert.equal(snap.sac, '996331');
   assert.equal(snap.lines.length, 2);
   assert.equal(get(t.db, 'SELECT status FROM orders WHERE id=?', oid).status, 'billed');
@@ -55,12 +56,13 @@ test('re-print keeps the number; reprint counter increments', () => {
   assert.equal(get(t.db, 'SELECT reprints FROM bills WHERE id=?', a.billId).reprints, 2);
 });
 
-test('discount: biller needs approval, reason required, approver recorded', () => {
+test('discount: biller needs approval, approver recorded, limits as in the legacy app', () => {
   const t = setup();
   const m = seedMenu(t);
   const oid = order(t, m);
   t.code('APPROVAL_REQUIRED', () => t.cmd('biller', 'bill.print', { orderId: oid, discount: { type: 'fixed', value: 20, reason: 'x' } }));
-  t.code('BAD_PAYLOAD', () => t.cmd('manager', 'bill.print', { orderId: oid, discount: { type: 'fixed', value: 20 } }));
+  t.code('BAD_PAYLOAD', () => t.cmd('manager', 'bill.print', { orderId: oid, discount: { type: 'pct', value: 101 } }));
+  t.code('BAD_PAYLOAD', () => t.cmd('manager', 'bill.print', { orderId: oid, discount: { type: 'fixed', value: 99999 } }));
   const r = t.cmd('biller', 'bill.print', { orderId: oid, discount: { type: 'fixed', value: 20, reason: 'friend' }, approval: t.approval('owner') });
   const b = get(t.db, 'SELECT * FROM bills WHERE id=?', r.billId);
   assert.deepEqual([b.discount_paise, b.discount_reason, b.approver_id], [2000, 'friend', t.users.owner]);
@@ -130,10 +132,29 @@ test('two billers interleaved on many tables -> consecutive, unique bill numbers
   assert.ok(nos.every((n) => n.length <= 16));
 });
 
-test('equal split sums exactly to the total in paise', () => {
-  for (const [total, ways] of [[100001, 3], [999, 7], [0, 2], [50000, 4]]) {
+test('equal split: whole-rupee shares, the last share takes the rest (legacy), exact sum', () => {
+  for (const [total, ways] of [[100000, 3], [99900, 7], [0, 2], [50000, 4]]) {
     const parts = splitEqual(total, ways);
     assert.equal(parts.reduce((a, b) => a + b, 0), total);
-    assert.ok(Math.max(...parts) - Math.min(...parts) <= 1);
+    assert.ok(parts.slice(0, -1).every((p) => p % 100 === 0 && p === parts[0]));
   }
+  assert.deepEqual(splitEqual(100000, 3), [33300, 33300, 33400]);
+});
+
+test('delivery charge (right: delivery) and tax list from settings on the bill', () => {
+  const t = setup();
+  const m = seedMenu(t);
+  t.cmd('owner', 'settings.update', { patch: { taxes: [{ name: 'CGST', rate: 2.5 }, { name: 'SGST', rate: 2.5 }, { name: 'Cess', rate: 1 }], taxOnDelivery: true, defaultDelivery: 40, gstin: '24ABCDE1234F1Z5' } });
+  const o = t.cmd('biller', 'order.open', { type: 'delivery', platform: 'Swiggy', customer: { name: 'Asha', phone: '9876543210' } });
+  assert.match(o.ref, /^SW\d+$/);
+  t.cmd('biller', 'order.line.add', { orderId: o.orderId, lines: [{ itemId: m.items.dal, qty: 1 }] });
+  t.code('FORBIDDEN', () => t.cmd('captain', 'order.delivery.charge', { orderId: o.orderId, amountPaise: 3000 }));
+  t.cmd('biller', 'order.delivery.charge', { orderId: o.orderId, amountPaise: 3000 });
+  const b = t.cmd('biller', 'bill.print', { orderId: o.orderId });
+  const row = get(t.db, 'SELECT * FROM bills WHERE id=?', b.billId);
+  // 219 + 30 delivery taxed: taxable 249 -> 6.23 + 6.23 + 2.49 = 14.95; raw 263.95 -> 264
+  assert.deepEqual([row.delivery_paise, row.taxable_paise, row.tax_paise, row.total_paise], [3000, 24900, 1495, 26400]);
+  assert.equal(JSON.parse(row.snapshot).title, 'Tax Invoice');
+  const p = t.cmd('biller', 'order.open', { type: 'takeaway' });
+  assert.match(p.ref, /^PK\d+$/);
 });

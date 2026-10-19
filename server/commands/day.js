@@ -2,7 +2,7 @@
 // Day close (Day 17) and print commands (Day 18).
 import { get, run } from '../db.js';
 import { need } from '../errors.js';
-import { businessDate, nextDay } from '../model.js';
+import { businessDate, nextDay, paise } from '../model.js';
 import { dayTally } from '../reports.js';
 
 /** @type {Record<string, import('../engine.js').Handler>} */
@@ -24,6 +24,18 @@ export const dayHandlers = {
     },
   },
 
+  // legacy day-end: "Cash counted" vs expected cash in the drawer
+  'cash.count': {
+    right: 'reports',
+    run(db, p, ctx) {
+      const date = typeof p.date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(p.date) ? p.date : businessDate(db, ctx.now);
+      const counted = paise(p.countedPaise, 'countedPaise');
+      run(db, 'INSERT INTO cash_counts(business_date,counted_paise,user_id,ts) VALUES (?,?,?,?) ON CONFLICT(business_date) DO UPDATE SET counted_paise=excluded.counted_paise, user_id=excluded.user_id, ts=excluded.ts',
+        date, counted, ctx.user.id, ctx.now);
+      const t = dayTally(db, date);
+      return { date, countedPaise: counted, expectedCashPaise: t.expectedCashPaise, diffPaise: counted - t.expectedCashPaise };
+    },
+  },
   'print.kot': {
     right: 'kot.reprint',
     run(db, p, ctx) {

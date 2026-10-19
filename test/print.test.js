@@ -31,7 +31,9 @@ test('lr() pads to exactly the column width; ascii() makes ₹ printable', () =>
 test('KOT and bill render within 32 and 48 columns', () => {
   const t = setup();
   const m = seedMenu(t);
-  const r = t.cmd('captain', 'kot.create', { tableId: m.tables[0], lines: [{ itemId: m.items.tikka, qty: 2, variant: 'Full', extras: ['Cheese'], note: 'no onion' }] });
+  t.cmd('captain', 'order.open', { type: 'dine', tableId: m.tables[0] });
+  const r = t.cmd('captain', 'kot.create', { tableId: m.tables[0], lines: [{ itemId: m.items.tikka, qty: 2, variant: 'Full', sides: [{ id: m.sides.cheese, qty: 2 }], notes: ['Jain'], note: 'no onion' }] });
+  t.cmd('captain', 'order.persons', { orderId: r.orderId, persons: 3 });
   const b = t.cmd('biller', 'bill.print', { orderId: r.orderId });
   for (const cols of [32, 48]) {
     for (const buf of [renderKot(t.db, r.kots[0].id, { cols }), renderBill(t.db, b.billId, { cols })]) {
@@ -40,9 +42,16 @@ test('KOT and bill render within 32 and 48 columns', () => {
     }
   }
   const kot = renderKot(t.db, r.kots[0].id).toString('latin1');
-  assert.match(kot, /KOT 1/);
-  assert.match(kot, />> no onion/);
-  assert.match(renderBill(t.db, b.billId).toString('latin1'), /KK1\/26-27\/000001/);
+  assert.match(kot, /KOT - 1/);
+  assert.match(kot, /Table No: 1/);
+  assert.match(kot, /Guests: 3/);
+  assert.match(kot, /Sides: Cheese - 2/);
+  assert.match(kot, /\[Note\] Jain, no onion/);
+  const bill = renderBill(t.db, b.billId).toString('latin1');
+  assert.match(bill, /KK1\/26-27\/000001/);
+  assert.match(bill, /BILL \(payment pending\)/);
+  assert.match(bill, /CGST @2.5%/);
+  assert.match(bill, /\+ Cheese x2/);
 });
 
 /** Fake ESC/POS printer: collects bytes. */
